@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Menu, 
   X
@@ -6,13 +6,16 @@ import {
 
 import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
+import Introduction from './components/Introduction';
 import TheDeck from './components/TheDeck';
 import Objective from './components/Objective';
 import Gameplay from './components/Gameplay';
 import Scoring from './components/Scoring';
 
+import creamPaperImg from './public/images/cream-paper.png';
+
 export default function App() {
-  const [activeSection, setActiveSection] = useState('01');
+  const [activeSection, setActiveSection] = useState('00');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState('Classic');
 
@@ -26,8 +29,34 @@ export default function App() {
     setIsMenuOpen(false);
   };
 
+  // Scroll spy to update active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['00', '01', '02', '03', '04'];
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(`section-${sections[i]}`);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // If the top of the section is above the middle of the viewport
+          if (rect.top <= window.innerHeight / 2) {
+            setActiveSection(sections[i]);
+            break;
+          }
+        }
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className={`min-h-screen flex ${theme === 'Night' ? 'bg-stone-950 text-stone-200' : 'bg-[#FDFCF9] text-stone-900'}`}>
+    <div 
+      className={`min-h-screen flex ${theme === 'Night' ? 'bg-stone-950 text-stone-200' : 'bg-[#FDFCF9] text-stone-900'}`}
+      style={{ backgroundImage: `url(${creamPaperImg})`, backgroundRepeat: 'repeat', backgroundBlendMode: theme === 'Night' ? 'color-burn' : 'multiply' }}
+    >
       <Sidebar 
         activeSection={activeSection} 
         scrollTo={scrollTo} 
@@ -50,6 +79,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 py-12 md:py-24">
           <Hero />
           
+          <Introduction />
+
           <TheDeck />
           
           <Objective />

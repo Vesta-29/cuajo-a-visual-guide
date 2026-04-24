@@ -62,7 +62,7 @@ const CuajoCard = ({
 
   if (faceDown) {
     return (
-      <div className={`w-20 md:w-32 aspect-[294/456] bg-stone-800 border-2 border-stone-700 rounded shadow-md flex items-center justify-center text-white/10 ${className}`}>
+      <div className={`w-20 md:w-32 aspect-[294/456] bg-stone-800 border-2 border-stone-700 rounded-[18px] shadow-lg flex items-center justify-center text-white/10 ${className}`}>
         ?
       </div>
     );
@@ -75,7 +75,7 @@ const CuajoCard = ({
 
   return (
     <div 
-      className={`relative w-20 md:w-32 aspect-[294/456] rounded shadow-sm flex flex-col justify-between transition-transform hover:-translate-y-1 hover:shadow-md cursor-default overflow-hidden ${!resolvedImageUrl ? 'bg-white border-2 border-stone-300 p-1 md:p-2' : ''} ${disabled ? 'opacity-40 grayscale' : ''} ${className}`}
+      className={`relative w-20 md:w-32 aspect-[294/456] rounded-[18px] shadow-md flex flex-col justify-between transition-transform hover:-translate-y-1 hover:shadow-xl cursor-default overflow-hidden ${!resolvedImageUrl ? 'bg-white border-2 border-stone-300 p-1 md:p-2' : ''} ${disabled ? 'opacity-40 grayscale' : ''} ${className}`}
     >
       {resolvedImageUrl ? (
         <img 

@@ -26,6 +26,7 @@ const Sidebar = ({ activeSection, scrollTo, isMenuOpen, setIsMenuOpen, theme, se
         </div>
 
         <nav className="space-y-2 flex-1">
+          <SidebarItem id="00" label="Introduction" active={activeSection === '00'} onClick={() => scrollTo('00')} />
           <SidebarItem id="01" label="The Deck" active={activeSection === '01'} onClick={() => scrollTo('01')} />
           <SidebarItem id="02" label="Objective" active={activeSection === '02'} onClick={() => scrollTo('02')} />
           <SidebarItem id="03" label="Gameplay" active={activeSection === '03'} onClick={() => scrollTo('03')} />
