@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Crimson Pro", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-cuajo-green: #3d5a37;
+  --color-cuajo-red: #8B4513; /* More of a sienna/earthy red for sleek look */
+  --color-cuajo-bg: #F1EDE0;
+}
+
+body {
+  background-color: var(--color-cuajo-bg);
+  background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+  color: #2c2c2c;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  @apply tracking-tight;
+}
+
+.markdown-body {
+  font-family: var(--font-sans);
+}
