@@ -33,20 +33,20 @@ const TheDeck = () => {
             </span>
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="p-4 border border-stone-200 bg-white/50 rounded flex flex-col items-center">
-              <span className="text-2xl mb-1 text-red-700">🏆</span>
+            <div className="p-4 border border-stone-200 bg-white/50 rounded flex flex-col items-center gap-4">
+              <CuajoCard suit="Copas" value="Ace" />
               <span className="text-[10px] font-black uppercase tracking-widest text-stone-400">Copas</span>
             </div>
-            <div className="p-4 border border-stone-200 bg-white/50 rounded flex flex-col items-center">
-              <span className="text-2xl mb-1 text-amber-600">🪙</span>
+            <div className="p-4 border border-stone-200 bg-white/50 rounded flex flex-col items-center gap-4">
+              <CuajoCard suit="Oros" value="Ace" />
               <span className="text-[10px] font-black uppercase tracking-widest text-stone-400">Oros</span>
             </div>
-            <div className="p-4 border border-stone-200 bg-white/50 rounded flex flex-col items-center">
-              <span className="text-2xl mb-1 text-blue-800">⚔️</span>
+            <div className="p-4 border border-stone-200 bg-white/50 rounded flex flex-col items-center gap-4">
+              <CuajoCard suit="Espadas" value="Ace" />
               <span className="text-[10px] font-black uppercase tracking-widest text-stone-400">Espadas</span>
             </div>
-            <div className="p-4 border border-stone-200 bg-white/50 rounded flex flex-col items-center">
-              <span className="text-2xl mb-1 text-stone-800">🌿</span>
+            <div className="p-4 border border-stone-200 bg-white/50 rounded flex flex-col items-center gap-4">
+              <CuajoCard suit="Bastos" value="Ace" />
               <span className="text-[10px] font-black uppercase tracking-widest text-stone-400">Bastos</span>
             </div>
           </div>

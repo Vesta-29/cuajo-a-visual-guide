@@ -47,7 +47,7 @@ export default function App() {
           </button>
         </header>
 
-        <div className="max-w-4xl mx-auto px-6 py-12 md:py-24">
+        <div className="max-w-7xl mx-auto px-6 py-12 md:py-24">
           <Hero />
           
           <TheDeck />

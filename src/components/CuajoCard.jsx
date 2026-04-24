@@ -1,5 +1,28 @@
 import React from 'react';
 
+// Pre-load all card images
+const cardImages = import.meta.glob('../public/images/cuajoCards/**/*.png', { eager: true, import: 'default' });
+
+const SUIT_TO_FOLDER = {
+  Copas: 'A',
+  Espadas: 'B',
+  Oros: 'C',
+  Bastos: 'D'
+};
+
+const VALUE_TO_NUMBER = {
+  Ace: '1',
+  '2': '2',
+  '3': '3',
+  '4': '4',
+  '5': '5',
+  '6': '6',
+  '7': '7',
+  Jack: '10',
+  Horse: '11',
+  King: '12'
+};
+
 const CuajoCard = ({ 
   suit, 
   value, 
@@ -39,19 +62,24 @@ const CuajoCard = ({
 
   if (faceDown) {
     return (
-      <div className={`w-12 h-20 md:w-16 md:h-24 bg-stone-800 border-2 border-stone-700 rounded shadow-md flex items-center justify-center text-white/10 ${className}`}>
+      <div className={`w-20 md:w-32 aspect-[294/456] bg-stone-800 border-2 border-stone-700 rounded shadow-md flex items-center justify-center text-white/10 ${className}`}>
         ?
       </div>
     );
   }
 
+  const folder = SUIT_TO_FOLDER[suit];
+  const number = VALUE_TO_NUMBER[value];
+  const imagePath = `../public/images/cuajoCards/${folder}/${folder}${number}.png`;
+  const resolvedImageUrl = imageUrl || (folder && number ? cardImages[imagePath] : null);
+
   return (
     <div 
-      className={`relative w-12 h-20 md:w-16 md:h-24 bg-white border-2 border-stone-300 rounded shadow-sm flex flex-col justify-between p-1 md:p-2 transition-transform hover:-translate-y-1 hover:shadow-md cursor-default overflow-hidden ${disabled ? 'opacity-40 grayscale' : ''} ${className}`}
+      className={`relative w-20 md:w-32 aspect-[294/456] rounded shadow-sm flex flex-col justify-between transition-transform hover:-translate-y-1 hover:shadow-md cursor-default overflow-hidden ${!resolvedImageUrl ? 'bg-white border-2 border-stone-300 p-1 md:p-2' : ''} ${disabled ? 'opacity-40 grayscale' : ''} ${className}`}
     >
-      {imageUrl ? (
+      {resolvedImageUrl ? (
         <img 
-          src={imageUrl} 
+          src={resolvedImageUrl} 
           alt={`${value} of ${suit}`} 
           className="absolute inset-0 w-full h-full object-cover"
           referrerPolicy="no-referrer"
