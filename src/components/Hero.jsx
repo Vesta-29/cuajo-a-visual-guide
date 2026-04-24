@@ -10,7 +10,7 @@ const Hero = () => {
             A Visual <span style={{ color: '#E06A7D' }}>Guide</span> to <br />
             <span className="italic" style={{ color: '#E06A7D' }}>Filipino Cuajo</span>
           </h1>
-          <div className="flex flex-wrap gap-10 mt-16 pb-8 border-b border-stone-300/60">
+          <div className="flex flex-wrap gap-10 mt-16 pb-8 ">
             <div>
               <span className="block text-4xl font-serif font-bold italic text-stone-800">112</span>
               <span className="text-[9px] font-black uppercase tracking-widest text-stone-400">Cards</span>

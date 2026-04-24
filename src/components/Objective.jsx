@@ -9,7 +9,7 @@ const Objective = () => {
       <SectionHeader 
         section="02 — Objective"
         title="Form valid combinations"
-        subtitle="The aim is to form all 16 cards in your winning hand into distinct valid combinations."
+        subtitle="The aim is to form all 16 cards in your winning hand into distinct valid combinations. There are four types of combination that can be used:"
       />
 
       <div className="space-y-8">
