@@ -78,7 +78,7 @@ const Objective = () => {
 
       <div className="space-y-8">
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="p-8 bg-white/60 border border-stone-300 rounded-xl shadow-sm backdrop-blur-sm flex flex-col h-full">
+          <div className="p-6 sm:p-8 lg:p-12 xl:p-16 bg-white/60 border border-stone-300 rounded-xl shadow-sm backdrop-blur-sm flex flex-col h-full">
             <h4 className="text-2xl font-serif mb-3 italic text-stone-800">Sets (Trio/Cuarteta)</h4>
             <p className="text-stone-500 text-sm mb-6 flex-grow">Three or four cards of the same rank in different suits.</p>
             <div className="flex gap-2">
@@ -88,7 +88,7 @@ const Objective = () => {
             </div>
           </div>
 
-          <div className="p-8 bg-white/60 border border-stone-300 rounded-xl shadow-sm backdrop-blur-sm flex flex-col h-full">
+          <div className="p-6 sm:p-8 lg:p-12 xl:p-16 bg-white/60 border border-stone-300 rounded-xl shadow-sm backdrop-blur-sm flex flex-col h-full">
             <h4 className="text-2xl font-serif mb-3 italic text-stone-800">Sequences (Cho)</h4>
             <p className="text-stone-500 text-sm mb-6 flex-grow">
               {renderText('Strictly **3-4-5** or **Jack-Horse-King** in one suit. Note: These are the only allowed sequences. Aces cannot be used in runs.')}
@@ -101,7 +101,7 @@ const Objective = () => {
           </div>
         </div>
 
-        <div className="p-8 bg-stone-100 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-8 items-center">
+        <div className="p-6 sm:p-8 lg:p-12 xl:p-16 bg-stone-100 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-8 items-center">
           <div className="flex-1">
             <h4 className="text-2xl font-serif mb-3 italic text-stone-800">The Secret(Secreto)</h4>
             <p className="text-stone-500 text-sm mb-4">
@@ -118,7 +118,7 @@ const Objective = () => {
           </div>
         </div>
 
-        <div className="p-8 bg-white/90 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-8 items-center">
+        <div className="p-6 sm:p-8 lg:p-12 xl:p-16 bg-white/90 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-8 items-center">
           <div className="flex-1">
             <h4 className="text-2xl font-serif mb-3 italic text-stone-800">Lone Kings(Hari)</h4>
             <p className="text-stone-500 text-sm leading-relaxed">

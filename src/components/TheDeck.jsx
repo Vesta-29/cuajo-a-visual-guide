@@ -57,20 +57,19 @@ In the Cuajo version, this deck is expanded to 112 cards by using only seven ran
         {/* Content */}
         <div className="flex flex-col lg:flex-row gap-8 items-start relative">
           {/* Suits List */}
-          <div className="flex-1 flex flex-col gap-10 w-full bg-white/40 p-8 rounded-lg border border-stone-300 shadow-sm backdrop-blur-sm">
+          <div className="flex-1 flex flex-col gap-10 w-full bg-white/40 p-5 sm:p-8 md:p-10 lg:p-12 xl:p-16 rounded-lg border border-stone-300 shadow-sm backdrop-blur-sm">
             {suits.filter(s => filter === 'All' || filter === s.id).map(suit => (
-              <div key={suit.id} className="flex flex-col md:flex-row gap-4 md:gap-8 pb-10 border-b border-stone-200 last:border-0 last:pb-0">
-                <div className="w-full md:w-48 shrink-0">
-                  <h4 className="text-xl font-serif font-bold text-stone-800 flex items-center gap-2">
+              <div key={suit.id} className="flex flex-col md:flex-row items-center gap-6 md:gap-12 pb-12 border-b border-stone-200 last:border-0 last:pb-0">
+                <div className="w-full md:w-48 shrink-0 flex flex-col text-left">
+                  <h4 className="text-4xl font-serif font-bold text-stone-800">
                     {suit.label}
                   </h4>
-                  <p className="text-sm font-serif italic text-stone-600 mt-1">{suit.icon} Suit</p>
-                  <p className="text-xs text-stone-500 mt-4 leading-relaxed">{suit.desc}</p>
+                  <p className="text-xs text-stone-500 mt-3 leading-relaxed">{suit.desc}</p>
                 </div>
                 
-                <div className="overflow-x-auto flex-1 pb-4 -mb-4">
+                <div className="flex-1">
                   <div
-                    className="grid grid-cols-7 gap-2 md:gap-4 flex-1 min-w-[600px] md:min-w-0"
+                    className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 flex-1"
                     onMouseLeave={() => { setHoveredKey(null); setHoveredCard(null); }}
                   >
                   {allRanks.map(rank => {
@@ -116,7 +115,7 @@ In the Cuajo version, this deck is expanded to 112 cards by using only seven ran
                   suit={hoveredCard.suit} 
                   value={hoveredCard.value} 
                   disabled={!hoveredCard.active}
-                  className="!w-32 md:!w-48 !h-auto shadow-2xl !rounded-[18px]" 
+                  className="!w-32 sm:!w-40 md:!w-48 lg:!w-56 xl:!w-64 !h-auto shadow-2xl !rounded-[18px]" 
                 />
                 <div className="text-center">
                   <h4 className="text-xl font-serif font-bold text-stone-800">

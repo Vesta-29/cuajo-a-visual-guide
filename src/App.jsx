@@ -76,7 +76,7 @@ export default function App() {
           </button>
         </header>
 
-        <div className="max-w-7xl mx-auto px-6 py-12 md:py-24">
+        <div className="max-w-[100%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 py-12 md:py-24 lg:py-32">
           <Hero />
           
           <Introduction />

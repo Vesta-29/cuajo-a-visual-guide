@@ -68,7 +68,7 @@ const Gameplay = () => {
       />
 
       {/* Two-column info card — mirrors the reference image's paired rule boxes */}
-      <div className="bg-white/60 border border-stone-300 rounded-xl p-8 mb-14 grid md:grid-cols-2 gap-10 backdrop-blur-sm shadow-sm">
+      <div className="bg-white/60 border border-stone-300 rounded-xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 2xl:p-16 mb-14 grid md:grid-cols-2 gap-10 backdrop-blur-sm shadow-sm">
         <div>
           <p
             className="text-[10px] font-black tracking-[0.2em] uppercase mb-3"
@@ -188,7 +188,7 @@ const Gameplay = () => {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex gap-4 p-4 bg-white/60 border border-stone-200 rounded-lg"
+                className="flex gap-4 p-4 sm:p-6 lg:p-8 xl:p-10 bg-white/60 border border-stone-200 rounded-lg"
               >
                 <p
                   className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5"
@@ -217,7 +217,7 @@ const Gameplay = () => {
 
       {/* Steps 3 & 4 — Penalties and Exhaustion */}
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="p-6 border border-stone-300 rounded-xl bg-white/40">
+        <div className="p-6 sm:p-8 lg:p-12 xl:p-16 border border-stone-300 rounded-xl bg-white/40">
           <div className="flex items-baseline gap-4 mb-4">
             <span
               className="text-5xl font-serif italic leading-none shrink-0"
@@ -236,7 +236,7 @@ const Gameplay = () => {
             re-declare Purro until the <strong>third turn</strong>.
           </p>
         </div>
-        <div className="p-6 border border-stone-300 rounded-xl bg-white/40">
+        <div className="p-6 sm:p-8 lg:p-12 xl:p-16 border border-stone-300 rounded-xl bg-white/40">
           <div className="flex items-baseline gap-4 mb-4">
             <span
               className="text-5xl font-serif italic leading-none shrink-0"

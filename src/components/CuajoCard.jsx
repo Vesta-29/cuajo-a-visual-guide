@@ -65,7 +65,7 @@ const CuajoCard = ({
     const cardBackUrl = cardImages[cardBackPath];
     
     return (
-      <div className={`relative w-20 md:w-32 aspect-[294/456] !rounded-[18px] shadow-lg flex items-center justify-center overflow-hidden bg-stone-800 ${className}`}>
+      <div className={`relative w-20 sm:w-24 md:w-28 lg:w-32 xl:w-36 2xl:w-40 aspect-[294/456] !rounded-[18px] shadow-lg flex items-center justify-center overflow-hidden bg-stone-800 ${className}`}>
         {cardBackUrl ? (
           <img 
             src={cardBackUrl} 
@@ -86,7 +86,7 @@ const CuajoCard = ({
 
   return (
     <div 
-      className={`relative w-20 md:w-32 aspect-[294/456] !rounded-[18px] shadow-md flex flex-col justify-between transition-transform hover:-translate-y-1 hover:shadow-xl cursor-default overflow-hidden ${!resolvedImageUrl ? 'bg-white border-2 border-stone-300 p-1 md:p-2' : ''} ${disabled ? 'opacity-40 grayscale' : ''} ${className}`}
+      className={`relative w-20 sm:w-24 md:w-28 lg:w-32 xl:w-36 2xl:w-40 aspect-[294/456] !rounded-[18px] shadow-md flex flex-col justify-between transition-transform hover:-translate-y-1 hover:shadow-xl cursor-default overflow-hidden ${!resolvedImageUrl ? 'bg-white border-2 border-stone-300 p-1 md:p-2' : ''} ${disabled ? 'opacity-40 grayscale' : ''} ${className}`}
     >
       {resolvedImageUrl ? (
         <img 
