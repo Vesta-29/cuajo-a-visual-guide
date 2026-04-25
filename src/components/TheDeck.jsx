@@ -5,6 +5,7 @@ import SectionHeader from './SectionHeader';
 const TheDeck = () => {
   const [filter, setFilter] = useState('All');
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredKey, setHoveredKey] = useState(null);
 
   const allRanks = [
     { value: 'Ace', active: true, desc: "Aces" },
@@ -28,7 +29,9 @@ const TheDeck = () => {
       <SectionHeader 
         section="01 — The Deck"
         title="Seven ranks, four copies"
-        subtitle={<>The Cuajo Filipino pack contains <strong>112 cards</strong>—a stripped Spanish-suited deck consisting of <strong>four suits</strong> (Copas, Oros, Espadas, and Bastos). Each suit has <strong>seven active ranks</strong> (ace, 3, 4, 5, jack, horse, king), with each card type repeated four times (7 ranks × 4 copies × 4 suits = 112 cards).</>}
+        subtitle={<>The Filipino Spanish deck has four suits <span style={{ color: '#E06A7D' }}>Oros (Coins), Kopas (Cups), Espadas (Swords), and Bastos (Clubs)</span> and 12 ranks. The face cards are Sota <span style={{ color: '#E06A7D' }}>(Jack), Kabayo (Knight or Horse), and Hari (King)</span>, which count as 10, 11, and 12.
+
+In the Cuajo version, this deck is expanded to 112 cards by using only seven ranks <span style={{ color: '#E06A7D' }}>(Ace, 3, 4, 5, Jack, Horse, King)</span> in each suit, with four copies of every card.</>}
       />
 
       <div className="flex flex-col gap-8">
@@ -65,22 +68,41 @@ const TheDeck = () => {
                   <p className="text-xs text-stone-500 mt-4 leading-relaxed">{suit.desc}</p>
                 </div>
                 
-                <div className="grid grid-cols-7 gap-2 md:gap-4 flex-1">
-                  {allRanks.map(rank => (
-                    <div 
-                      key={`${suit.id}-${rank.value}`}
-                      onMouseEnter={() => setHoveredCard({ suit: suit.id, value: rank.value, desc: rank.desc, active: rank.active })}
-                      onMouseLeave={() => setHoveredCard(null)}
-                      className="cursor-pointer"
-                    >
-                      <CuajoCard 
-                        suit={suit.id} 
-                        value={rank.value} 
-                        disabled={!rank.active} 
-                        className="!w-full !h-auto transition-transform hover:-translate-y-2 hover:z-10 relative shadow-md" 
-                      />
-                    </div>
-                  ))}
+                <div className="overflow-x-auto flex-1 pb-4 -mb-4">
+                  <div
+                    className="grid grid-cols-7 gap-2 md:gap-4 flex-1 min-w-[600px] md:min-w-0"
+                    onMouseLeave={() => { setHoveredKey(null); setHoveredCard(null); }}
+                  >
+                  {allRanks.map(rank => {
+                    const key = `${suit.id}-${rank.value}`;
+                    const isHovered = hoveredKey === key;
+                    const anyHovered = hoveredKey !== null;
+                    return (
+                      <div 
+                        key={key}
+                        onMouseEnter={() => {
+                          setHoveredKey(key);
+                          setHoveredCard({ suit: suit.id, value: rank.value, desc: rank.desc, active: rank.active });
+                        }}
+                        className="cursor-pointer transition-all duration-200"
+                        style={{
+                          opacity: anyHovered && !isHovered ? 0.25 : 1,
+                        }}
+                      >
+                        <CuajoCard 
+                          suit={suit.id} 
+                          value={rank.value} 
+                          disabled={!rank.active} 
+                          className={`!w-full !h-auto transition-all duration-200 relative shadow-md !rounded-[18px] ${
+                            isHovered
+                              ? 'ring-2 ring-[#E06A7D] -translate-y-2 shadow-xl z-10'
+                              : ''
+                          }`}
+                        />
+                      </div>
+                    );
+                  })}
+                  </div>
                 </div>
               </div>
             ))}
@@ -94,7 +116,7 @@ const TheDeck = () => {
                   suit={hoveredCard.suit} 
                   value={hoveredCard.value} 
                   disabled={!hoveredCard.active}
-                  className="!w-32 md:!w-48 !h-auto shadow-2xl" 
+                  className="!w-32 md:!w-48 !h-auto shadow-2xl !rounded-[18px]" 
                 />
                 <div className="text-center">
                   <h4 className="text-xl font-serif font-bold text-stone-800">

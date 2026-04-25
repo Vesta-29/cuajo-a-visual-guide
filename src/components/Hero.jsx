@@ -1,16 +1,101 @@
 import React from 'react';
 
+const cardImages = import.meta.glob('../public/images/cuajoCards/**/*.png', { eager: true, import: 'default' });
+
+const KINGS = [
+  {
+    id: 'clubs',
+    src: cardImages['../public/images/cuajoCards/D/D12.png'],
+    alt: 'King of Bastos',
+    rotation: -30,
+    zIndex: 1,
+    offsetX: '-55px',
+  },
+  {
+    id: 'swords',
+    src: cardImages['../public/images/cuajoCards/B/B12.png'],
+    alt: 'King of Espadas',
+    rotation: -12,
+    zIndex: 2,
+    offsetX: '-18px',
+  },
+  {
+    id: 'coins',
+    src: cardImages['../public/images/cuajoCards/C/C12.png'],
+    alt: 'King of Oros',
+    rotation: 6,
+    zIndex: 3,
+    offsetX: '18px',
+  },
+  {
+    id: 'cups',
+    src: cardImages['../public/images/cuajoCards/A/A12.png'],
+    alt: 'King of Copas',
+    rotation: 20,
+    zIndex: 4,
+    offsetX: '55px',
+  },
+];
+
+const KingCard = ({ src, alt, rotation, zIndex, offsetX }) => (
+  <div
+    style={{
+      position: 'absolute',
+      bottom: 0,
+      left: '50%',
+      transform: `translateX(calc(-50% + ${offsetX})) rotate(${rotation}deg)`,
+      transformOrigin: 'bottom center',
+      zIndex,
+      width: '160px',
+    }}
+  >
+    {/* Red outer border frame */}
+    <div
+      style={{
+        padding: '5px',
+        background: 'linear-gradient(145deg, #fdf8f2, #f5ede0)',
+        border: '2.5px solid #c0392b',
+        borderRadius: '12px',
+        boxShadow:
+          zIndex === 4
+            ? '0 20px 50px rgba(0,0,0,0.35), 0 4px 12px rgba(192,57,43,0.2)'
+            : `0 ${4 + zIndex * 2}px ${16 + zIndex * 4}px rgba(0,0,0,0.18)`,
+      }}
+    >
+      {/* Inner dashed accent border */}
+      <div
+        style={{
+          border: '1.5px dashed rgba(192,57,43,0.4)',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          lineHeight: 0,
+        }}
+      >
+        <img
+          src={src}
+          alt={alt}
+          style={{
+            width: '100%',
+            display: 'block',
+            objectFit: 'cover',
+          }}
+        />
+      </div>
+    </div>
+  </div>
+);
+
 const Hero = () => {
   return (
     <section className="mb-16">
       <div className="flex flex-col md:flex-row justify-between items-center gap-12 w-full">
-        <div className="flex-1 max-w-3xl">
+        <div className="flex-[0.6] max-w-2xl">
           <p className="text-[10px] font-black tracking-[0.3em] text-stone-500 uppercase mb-5">Heritage of the Philippines</p>
           <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight text-stone-800 mb-8 tracking-tighter">
             A Visual <span style={{ color: '#E06A7D' }}>Guide</span> to <br />
             <span className="italic" style={{ color: '#E06A7D' }}>Filipino Cuajo</span>
           </h1>
-          <div className="flex flex-wrap gap-10 mt-16 pb-8 ">
+          <div className="flex flex-wrap gap-10 mt-16 pb-8">
             <div>
               <span className="block text-4xl font-serif font-bold italic text-stone-800">112</span>
               <span className="text-[9px] font-black uppercase tracking-widest text-stone-400">Cards</span>
@@ -25,11 +110,15 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="relative hidden md:block shrink-0 md:mr-12 lg:mr-24">
-          <div className="absolute -top-12 -left-12 w-56 h-72 bg-white/30 border border-stone-400 rounded-lg transform -rotate-6 backdrop-blur-sm shadow-sm"></div>
-          <div className="relative w-56 h-72 bg-white border border-stone-400 rounded-lg shadow-2xl flex items-center justify-center text-9xl text-stone-800 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-stone-100">
-            🏮
-          </div>
+
+        {/* Fanned King Cards */}
+        <div
+          className="relative hidden md:block shrink-0"
+          style={{ width: '350px', height: '200px', margin: '0 auto' }}
+        >
+          {KINGS.map((king) => (
+            <KingCard key={king.id} {...king} />
+          ))}
         </div>
       </div>
     </section>
