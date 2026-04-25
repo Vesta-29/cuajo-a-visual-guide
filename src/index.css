@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Pipanganan';
+  src: url('./public/font/Pipanganan.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @theme {
   --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-serif: "Crimson Pro", serif;
+  --font-serif: "Pipanganan", "Crimson Pro", serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   --color-cuajo-green: #3d5a37;
@@ -16,12 +23,30 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
   color: #2c2c2c;
   font-family: var(--font-sans);
+  font-size: 16px; /* Reverted to standard for a more compact feel */
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  @apply text-4xl md:text-6xl;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl;
+}
+
+h3 {
+  @apply text-xl md:text-2xl;
+}
+
+h4 {
+  @apply text-lg md:text-xl;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  @apply tracking-tight;
+  @apply tracking-tight font-bold;
 }
 
 .markdown-body {
