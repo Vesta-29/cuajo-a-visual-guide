@@ -96,9 +96,9 @@ const Gameplay = () => {
         </div>
       </div>
 
-      <div className="space-y-14">
+      <div className="">
         {/* Step 1 — The Sowee */}
-        <div className="flex flex-col md:flex-row gap-10 items-start">
+        <div className="flex flex-col md:flex-row gap-10 items-start md:items-center pb-14">
           <div className="flex-1 space-y-5">
             <div className="flex items-baseline gap-5">
               <span className="text-7xl font-serif italic leading-none shrink-0" style={{ color: RED }}>1</span>
@@ -114,21 +114,21 @@ const Gameplay = () => {
                 { label: 'Rule', desc: 'The extra card stays hidden and must be used in a valid combination later.' },
               ].map((item) => (
                 <div key={item.label} className="flex gap-4 p-4 sm:p-6 lg:p-8 xl:p-10 bg-white/60 border border-stone-200 rounded-lg">
-                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5" style={{ color: RED }}>{item.label}</p>
+                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5 w-28" style={{ color: RED }}>{item.label}</p>
                   <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="w-full md:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-white/60 border border-stone-300 rounded-xl shadow-sm">
+          <div className="w-full md:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
              <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-400">Sowee Visual</p>
              <SoweeVisual />
-             <p className="text-xs text-stone-500 text-center leading-relaxed">Card rotated 90° under stock</p>
+             <p className="text-xs text-stone-400 text-center leading-relaxed">Card rotated 90° under stock</p>
           </div>
         </div>
 
         {/* Step 2 — Turn Mechanics */}
-        <div className="flex flex-col md:flex-row gap-10 items-start">
+        <div className="flex flex-col md:flex-row gap-10 items-start md:items-center pb-14">
           <div className="flex-1 space-y-5">
             <div className="flex items-baseline gap-5">
               <span className="text-7xl font-serif italic leading-none shrink-0" style={{ color: RED }}>2</span>
@@ -144,7 +144,7 @@ const Gameplay = () => {
                 { label: 'Option B', desc: 'Pick up the most recent discard (face-up).' },
               ].map((item) => (
                 <div key={item.label} className="flex gap-4 p-4 sm:p-6 lg:p-8 xl:p-10 bg-white/60 border border-stone-200 rounded-lg">
-                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5" style={{ color: RED }}>{item.label}</p>
+                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5 w-28" style={{ color: RED }}>{item.label}</p>
                   <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -158,55 +158,94 @@ const Gameplay = () => {
         </div>
 
         {/* Step 3 — Purro Protocol */}
-        <div className="flex flex-col md:flex-row gap-10 items-start">
+        <div className="flex flex-col md:flex-row gap-10 items-start md:items-center pb-14">
           <div className="flex-1 space-y-5">
             <div className="flex items-baseline gap-5">
               <span className="text-7xl font-serif italic leading-none shrink-0" style={{ color: RED }}>3</span>
               <h3 className="text-2xl font-serif font-bold text-stone-800">The Purro Protocol</h3>
             </div>
             <p className="text-sm text-stone-600 leading-relaxed">
-              Declare <em>Purro</em> when you need only <strong>one card to win</strong>. This triggers special obligations for all players.
+              When you reach a waiting position where you only need <strong>one card to win</strong>, declare <em>Purro</em>.
             </p>
             <div className="space-y-3">
               {[
-                { label: 'Declaration', desc: 'Place a Hari (or a token) face-up on the table to signal Purro.' },
-                { label: 'Transparency', desc: 'All players must reveal their stock draws from that point on.' },
-                { label: 'Priority', desc: 'Drawer takes precedence. Otherwise, counterclockwise order wins.' },
+                { label: 'Declaration', desc: 'Place a Hari (King) or chip face-up to signal Purro. Note: Winning without a Hari in hand earns a greater payout.' },
+                { label: 'Transparency', desc: 'All players must now draw from the stock face-up to allow for potential interception.' },
+                { label: 'Winning Ways', desc: 'Win by drawing yourself, taking the left discard, or intercepting (calling "Time") a face-up stock draw.' },
+                { label: 'Priority', desc: 'If multiple players win on one card, the drawer takes precedence. Otherwise, counterclockwise order wins.' },
               ].map((item) => (
                 <div key={item.label} className="flex gap-4 p-4 sm:p-6 lg:p-8 xl:p-10 bg-white/60 border border-stone-200 rounded-lg">
-                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5" style={{ color: RED }}>{item.label}</p>
+                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5 w-28" style={{ color: RED }}>{item.label}</p>
+                  <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+              <div className="p-4 bg-stone-100/50 border border-stone-200 rounded-lg italic text-[11px] text-stone-500">
+                <strong>Note:</strong> Unlike Mahjong, you cannot pick up discarded cards out of turn; you only win from the player to your immediate left or via face-up stock draws.
+              </div>
+            </div>
+          </div>
+          <div className="w-full md:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
+            <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-400">Hari signal</p>
+            <CuajoCard suit="Oros" value="King" className="!w-28 !h-auto shadow-xl" />
+            <p className="text-xs text-stone-400 text-center leading-relaxed">Signal your final card wait</p>
+          </div>
+        </div>
+
+        {/* Step 4 — Losing Purro */}
+        <div className="flex flex-col md:flex-row gap-10 items-start md:items-center pb-14">
+          <div className="flex-1 space-y-5">
+            <div className="flex items-baseline gap-5">
+              <span className="text-7xl font-serif italic leading-none shrink-0" style={{ color: RED }}>4</span>
+              <h3 className="text-2xl font-serif font-bold text-stone-800">Losing Purro</h3>
+            </div>
+            <p className="text-sm text-stone-600 leading-relaxed">
+              If you draw a Hari (which cannot be discarded) and must break your waiting hand, you have <strong>Lost Purro</strong>.
+            </p>
+            <div className="space-y-3">
+              {[
+                { label: 'Penalty', desc: 'Draw face-up for two rounds. Others cannot intercept these draws.' },
+                { label: 'Restriction', desc: 'You cannot win or re-declare Purro during these rounds. Resume normal play in the third round.' },
+              ].map((item) => (
+                <div key={item.label} className="flex gap-4 p-4 sm:p-6 lg:p-8 xl:p-10 bg-white/60 border border-stone-200 rounded-lg">
+                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5 w-28" style={{ color: RED }}>{item.label}</p>
                   <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="w-full md:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-white/60 border border-stone-300 rounded-xl shadow-sm">
-            <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-400">Hari signal</p>
-            <CuajoCard suit="Oros" value="King" className="!w-28 !h-auto shadow-xl" />
-            <p className="text-xs text-stone-500 text-center leading-relaxed">Place a King to declare Purro</p>
+          <div className="w-full md:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
+            <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-400">Losing Purro</p>
+            <div className="relative">
+               <CuajoCard suit="Bastos" value="King" className="!w-28 !h-auto opacity-50 grayscale" />
+               <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-white text-5xl font-black rotate-12 drop-shadow-lg">X</span>
+               </div>
+            </div>
+            <p className="text-xs text-stone-400 text-center leading-relaxed">Mandatory Hari draw</p>
           </div>
         </div>
-      </div>
 
-      {/* Final Row — Penalties and Exhaustion */}
-      <div className="grid md:grid-cols-2 gap-6 mt-14">
-        <div className="p-6 sm:p-8 lg:p-12 xl:p-16 border border-stone-300 rounded-xl bg-white/40">
-          <div className="flex items-baseline gap-4 mb-4">
-            <span className="text-5xl font-serif italic leading-none shrink-0" style={{ color: RED }}>4</span>
-            <h3 className="text-xl font-serif font-bold text-stone-800">Losing Purro</h3>
+        {/* Step 5 — Stock Exhaustion */}
+        <div className="flex flex-col md:flex-row gap-10 items-start md:items-center pb-14">
+          <div className="flex-1 space-y-5">
+            <div className="flex items-baseline gap-5">
+              <span className="text-7xl font-serif italic leading-none shrink-0" style={{ color: RED }}>5</span>
+              <h3 className="text-2xl font-serif font-bold text-stone-800">Stock Exhaustion</h3>
+            </div>
+            <p className="text-sm text-stone-600 leading-relaxed">
+              If the stock is depleted before anyone wins, the hand is a <strong>draw</strong>. No payments are made except for any <strong>Secretos</strong> already settled.
+            </p>
+            <div className="p-4 bg-white/40 border border-stone-200 rounded-lg italic text-[11px] text-stone-500">
+               <strong>Note:</strong> In a draw, the same Mano (dealer) usually shuffles and deals for the next round.
+            </div>
           </div>
-          <p className="text-sm text-stone-600 leading-relaxed">
-            Breaking Purro requires drawing face-up for two rounds and waiting until the third turn to re-declare.
-          </p>
-        </div>
-        <div className="p-6 sm:p-8 lg:p-12 xl:p-16 border border-stone-300 rounded-xl bg-white/40">
-          <div className="flex items-baseline gap-4 mb-4">
-            <span className="text-5xl font-serif italic leading-none shrink-0" style={{ color: RED }}>5</span>
-            <h3 className="text-xl font-serif font-bold text-stone-800">Stock Exhaustion</h3>
+          <div className="w-full md:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
+            <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-400">Empty Stock</p>
+            <div className="w-28 h-40 border-2 border-dashed border-stone-600 rounded-[18px] flex items-center justify-center">
+               <span className="text-stone-600 text-xs font-black uppercase tracking-widest">Depleted</span>
+            </div>
+            <p className="text-xs text-stone-400 text-center leading-relaxed">No cards remaining</p>
           </div>
-          <p className="text-sm text-stone-600 leading-relaxed">
-            If the stock is depleted, the hand is a draw. No payments are made except for settled Secretos.
-          </p>
         </div>
       </div>
     </section>

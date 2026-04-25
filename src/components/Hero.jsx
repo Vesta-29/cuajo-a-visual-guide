@@ -88,12 +88,13 @@ const KingCard = ({ src, alt, rotation, zIndex, offsetX }) => (
 const Hero = () => {
   return (
     <section className="mb-16">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-12 w-full">
-        <div className="flex-[0.6] max-w-2xl">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-1 w-full">
+        <div className="flex-[0.8] max-w-2xl">
           <p className="text-[10px] font-black tracking-[0.3em] text-stone-500 uppercase mb-5">Heritage of the Philippines</p>
-          <h1 className="leading-tight text-stone-800 mb-8 tracking-tighter">
-            A Visual <span style={{ color: '#E06A7D' }}>Guide</span> to <br />
-            <span className="italic" style={{ color: '#E06A7D' }}>Filipino Cuajo</span>
+          <h1 className="leading-tight text-stone-800 mb-8 tracking-tighter ">
+            Learn <span className="italic" style={{ color: '#E06A7D' }}>Cuajo </span> <br />
+            A Digital <span style={{ color: '#E06A7D' }}>Manual</span>
+            
           </h1>
           <div className="flex flex-wrap gap-10 mt-16 pb-8">
             <div>

@@ -34,15 +34,11 @@ const highlightWord = (text, word) => {
   );
 };
 
-// Flip card for the Secret section
-const FlipCard = ({ suit, value = 'King' }) => {
-  const [flipped, setFlipped] = useState(false);
+// Flip card component that accepts flip state from parent
+const FlipCard = ({ suit, value = 'King', isFlipped }) => {
   return (
     <div
-      className="cursor-pointer"
       style={{ perspective: '600px', width: '80px' }}
-      onMouseEnter={() => setFlipped(true)}
-      onMouseLeave={() => setFlipped(false)}
     >
       <div
         style={{
@@ -50,17 +46,17 @@ const FlipCard = ({ suit, value = 'King' }) => {
           width: '100%',
           aspectRatio: '294/456',
           transformStyle: 'preserve-3d',
-          transition: 'transform 0.45s cubic-bezier(0.4,0,0.2,1)',
-          transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+          transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+          transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
         }}
       >
         {/* Back face */}
         <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
-          <CuajoCard faceDown={true} className="!w-full !h-full" />
+          <CuajoCard faceDown={true} className="!w-full !h-full shadow-md" />
         </div>
         {/* Front face (revealed King) */}
         <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
-          <CuajoCard suit={suit} value={value} className="!w-full !h-full ring-2 ring-[#E06A7D] !rounded-[18px]" />
+          <CuajoCard suit={suit} value={value} className="!w-full !h-full ring-2 ring-[#E06A7D] !rounded-[18px] shadow-xl" />
         </div>
       </div>
     </div>
@@ -68,6 +64,8 @@ const FlipCard = ({ suit, value = 'King' }) => {
 };
 
 const Objective = () => {
+  const [secretsFlipped, setSecretsFlipped] = useState(false);
+
   return (
     <section id="section-02" className="mb-32 scroll-mt-24">
       <SectionHeader 
@@ -111,9 +109,13 @@ const Objective = () => {
               )}
             </p>
           </div>
-          <div className="flex gap-1">
+          <div 
+            className="flex gap-1 cursor-pointer p-4 rounded-xl transition-colors hover:bg-stone-200/50"
+            onMouseEnter={() => setSecretsFlipped(true)}
+            onMouseLeave={() => setSecretsFlipped(false)}
+          >
             {[1, 2, 3, 4].map((i) => (
-              <FlipCard key={i} suit="Oros" value="4" />
+              <FlipCard key={i} suit="Oros" value="4" isFlipped={secretsFlipped} />
             ))}
           </div>
         </div>

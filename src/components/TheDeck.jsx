@@ -108,31 +108,31 @@ In the Cuajo version, this deck is expanded to 112 cards by using only seven ran
           </div>
 
           {/* Hover Preview Panel */}
-          <div className="w-full lg:w-72 shrink-0 lg:sticky lg:top-24 bg-[#FCFBF8] border border-stone-200 rounded-lg p-6 shadow-sm min-h-[400px] flex flex-col items-center justify-center transition-all duration-300">
+          <div className="w-full lg:!w-[291px] lg:!min-w-[291px] lg:!max-w-[291px] shrink-0 lg:sticky lg:top-24 bg-stone-800 border border-stone-700 rounded-lg p-6 shadow-2xl min-h-[400px] max-h-[400px] flex flex-col items-center justify-center overflow-hidden">
             {hoveredCard ? (
-              <div className="flex flex-col items-center gap-6 animate-in fade-in zoom-in duration-200">
+              <div className="flex flex-col items-center gap-6 animate-in fade-in zoom-in duration-200 w-full">
                 <CuajoCard 
                   suit={hoveredCard.suit} 
                   value={hoveredCard.value} 
                   disabled={!hoveredCard.active}
-                  className="!w-32 sm:!w-40 md:!w-48 lg:!w-56 xl:!w-64 !h-auto shadow-2xl !rounded-[18px]" 
+                  className="!w-28 sm:!w-32 md:!w-36 lg:!w-40 xl:!w-44 !h-auto shadow-2xl !rounded-[18px]" 
                 />
-                <div className="text-center">
-                  <h4 className="text-xl font-serif font-bold text-stone-800">
+                <div className="text-center w-full">
+                  <h4 className="text-xl font-serif font-bold text-white break-words">
                     {hoveredCard.value} of {hoveredCard.suit}
                   </h4>
-                  <p className="text-sm text-stone-500 mt-2">{hoveredCard.desc}</p>
+                  <p className="text-sm text-stone-400 mt-2 break-words leading-relaxed">{hoveredCard.desc}</p>
                   {!hoveredCard.active && (
-                    <span className="inline-block mt-3 px-2 py-1 bg-stone-200 text-stone-600 text-[10px] font-bold uppercase tracking-widest rounded">
+                    <span className="inline-block mt-3 px-2 py-1 bg-stone-700 text-stone-300 text-[10px] font-bold uppercase tracking-widest rounded">
                       Excluded from Cuajo
                     </span>
                   )}
                 </div>
               </div>
             ) : (
-              <div className="text-center text-stone-400">
-                <h4 className="text-xl font-serif mb-3 text-stone-800">Hover or tap a card</h4>
-                <p className="text-sm text-stone-500 leading-relaxed">Each card appears four times in the deck to form the 112-card set.</p>
+              <div className="text-center text-stone-500 w-full">
+                <h4 className="text-xl font-serif mb-3 text-stone-300 break-words">Hover or tap a card</h4>
+                <p className="text-sm text-stone-500 leading-relaxed break-words">Each card appears four times in the deck to form the 112-card set.</p>
               </div>
             )}
           </div>
