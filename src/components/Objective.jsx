@@ -39,7 +39,7 @@ const FlipCard = ({ suit, value = 'King', isFlipped }) => {
   return (
     <div
       style={{ perspective: '600px' }}
-      className="!w-28"
+      className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
     >
       <div
         style={{
@@ -93,9 +93,9 @@ const Objective = () => {
             </p>
           </div>
           <div className={visualContainerClass}>
-            <CuajoCard suit="Oros" value="3" className="!w-28" />
-            <CuajoCard suit="Copas" value="3" className="!w-28" />
-            <CuajoCard suit="Espadas" value="3" className="!w-28" />
+            <CuajoCard suit="Oros" value="3" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
+            <CuajoCard suit="Copas" value="3" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
+            <CuajoCard suit="Espadas" value="3" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
           </div>
         </div>
 
@@ -109,10 +109,10 @@ const Objective = () => {
             </p>
           </div>
           <div className={visualContainerClass}>
-            <CuajoCard suit="Oros" value="5" className="!w-28" />
-            <CuajoCard suit="Copas" value="5" className="!w-28" />
-            <CuajoCard suit="Espadas" value="5" className="!w-28" />
-            <CuajoCard suit="Bastos" value="5" className="!w-28" />
+            <CuajoCard suit="Oros" value="5" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
+            <CuajoCard suit="Copas" value="5" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
+            <CuajoCard suit="Espadas" value="5" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
+            <CuajoCard suit="Bastos" value="5" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
           </div>
         </div>
 
@@ -126,9 +126,9 @@ const Objective = () => {
             </p>
           </div>
           <div className={visualContainerClass}>
-            <CuajoCard suit="Bastos" value="3" className="!w-28" />
-            <CuajoCard suit="Bastos" value="4" className="!w-28" />
-            <CuajoCard suit="Bastos" value="5" className="!w-28" />
+            <CuajoCard suit="Bastos" value="3" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
+            <CuajoCard suit="Bastos" value="4" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
+            <CuajoCard suit="Bastos" value="5" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
           </div>
         </div>
 
@@ -166,8 +166,8 @@ const Objective = () => {
             </p>
           </div>
           <div className={visualContainerClass}>
-            <CuajoCard suit="Oros" value="King" className="!w-28" />
-            <CuajoCard suit="Copas" value="King" className="!w-28" />
+            <CuajoCard suit="Oros" value="King" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
+            <CuajoCard suit="Copas" value="King" className="!w-16 sm:!w-20 md:!w-24 lg:!w-28" />
           </div>
         </div>
       </div>

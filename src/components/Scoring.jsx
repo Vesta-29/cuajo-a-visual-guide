@@ -39,7 +39,7 @@ const Scoring = () => {
       </div>
 
       {/* Example Winning Deck Row (Mahjong Style) */}
-      <div className="bg-[#FDFCF9] border border-stone-200 rounded-2xl p-8 sm:p-12 mb-14 shadow-sm overflow-hidden relative">
+      <div className="bg-[#FDFCF9] border border-stone-200 rounded-2xl p-5 sm:p-8 md:p-12 mb-14 shadow-sm overflow-hidden relative">
         <div className="mb-10">
           <h4 className="text-3xl font-serif text-stone-800 flex items-baseline gap-2">
             Example Winning Hand <span className="text-stone-400">·</span> <span style={{ color: RED }} className="italic">Bahay</span>
@@ -108,20 +108,20 @@ const Scoring = () => {
           </div>
 
           {/* Footer stats */}
-          <div className="w-full pt-10 mt-6 border-t border-dashed border-stone-200 flex flex-col items-center gap-2">
-            <div className="flex items-center gap-8 text-stone-800">
+          <div className="w-full pt-10 mt-6 border-t border-dashed border-stone-200 flex flex-col items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-stone-800">
                <div className="text-center">
-                  <div className="text-3xl font-serif font-black" style={{ color: RED }}>16</div>
+                  <div className="text-2xl sm:text-3xl font-serif font-black" style={{ color: RED }}>16</div>
                   <div className="text-[9px] font-black uppercase tracking-tighter text-stone-400">Cards Total</div>
                </div>
-               <div className="text-xl text-stone-300">→</div>
+               <div className="text-xl text-stone-300 hidden sm:block">→</div>
                <div className="text-center">
-                  <div className="text-3xl font-serif font-bold text-stone-800">5 <span className="text-sm italic font-normal text-stone-500">sets</span></div>
+                  <div className="text-2xl sm:text-3xl font-serif font-bold text-stone-800">5 <span className="text-xs sm:text-sm italic font-normal text-stone-500">sets</span></div>
                   <div className="text-[9px] font-black uppercase tracking-tighter text-stone-400">Combinations</div>
                </div>
-               <div className="text-xl text-stone-300">=</div>
+               <div className="text-xl text-stone-300 hidden sm:block">=</div>
                <div className="text-center">
-                  <div className="text-3xl font-serif italic font-bold" style={{ color: RED }}>Valid Win</div>
+                  <div className="text-2xl sm:text-3xl font-serif italic font-bold" style={{ color: RED }}>Valid Win</div>
                </div>
             </div>
           </div>
@@ -216,7 +216,7 @@ const Scoring = () => {
           </div>
           <div className="w-full lg:w-80 flex flex-col items-center gap-6 p-8 bg-stone-700/30 rounded-xl border border-stone-600">
              <p className="text-[10px] font-black tracking-widest uppercase text-stone-500">The Winning Card</p>
-             <CuajoCard suit="Copas" value="4" className="!w-32 shadow-2xl ring-4 ring-[#E06A7D] ring-offset-4 ring-offset-stone-800" />
+             <CuajoCard suit="Copas" value="4" className="!w-24 sm:!w-28 md:!w-32 shadow-2xl ring-4 ring-[#E06A7D] ring-offset-4 ring-offset-stone-800" />
              <div className="text-center">
                 <p className="text-sm font-bold text-white">4 of Copas</p>
                 <p className="text-[10px] text-stone-400 uppercase tracking-widest">Target for Bonuses</p>

@@ -77,11 +77,7 @@ export default function App() {
             </div>
             <div className="flex flex-col justify-center">
               <h1 className="text-xl font-serif font-bold italic leading-none">Cuajo</h1>
-              
-            </div>
-            <div className='pt-6'>
               <p className="text-[7px] uppercase tracking-[0.2em] text-stone-400 font-black mt-0.5">Digital Manual</p>
-
             </div>
           </div>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2">
@@ -89,7 +85,7 @@ export default function App() {
           </button>
         </header>
 
-        <div className="max-w-[100%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 py-12 md:py-24 lg:py-32">
+        <div className="max-w-[100%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-5 sm:px-10 md:px-16 lg:px-20 py-10 md:py-20 lg:py-32">
           <Hero />
           
           <Introduction />

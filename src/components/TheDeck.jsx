@@ -57,7 +57,7 @@ In the Cuajo version, this deck is expanded to 112 cards by using only seven ran
         {/* Content */}
         <div className="flex flex-col lg:flex-row gap-8 items-start relative">
           {/* Suits List */}
-          <div className="flex-1 flex flex-col gap-10 w-full bg-white/40 p-5 sm:p-8 md:p-10 lg:p-12 xl:p-16 rounded-lg border border-stone-300 shadow-sm backdrop-blur-sm">
+          <div className="flex-1 flex flex-col gap-10 w-full bg-white/40 p-4 sm:p-6 md:p-8 lg:p-12 rounded-lg border border-stone-300 shadow-sm backdrop-blur-sm">
             {suits.filter(s => filter === 'All' || filter === s.id).map(suit => (
               <div key={suit.id} className="flex flex-col md:flex-row items-center gap-6 md:gap-12 pb-12 border-b border-stone-200 last:border-0 last:pb-0">
                 <div className="w-full md:w-48 shrink-0 flex flex-col text-left">

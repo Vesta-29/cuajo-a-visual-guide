@@ -20,7 +20,7 @@ const StockCard = () => {
   return (
     <div
       className="cursor-pointer"
-      style={{ perspective: '600px', width: '112px' }}
+      style={{ perspective: '600px', width: '100%', maxWidth: '112px' }}
       onMouseEnter={() => {
         pickRandom();
         setFlipped(true);
@@ -54,11 +54,11 @@ const SoweeVisual = () => (
   <div className="relative w-full h-48 flex items-center justify-center">
     {/* Horizontal Sowee Card (Face Up) */}
     <div className="absolute rotate-90 translate-y-4">
-       <CuajoCard suit="Copas" value="5" className="!w-24 shadow-sm opacity-90" />
+       <CuajoCard suit="Copas" value="5" className="!w-20 sm:!w-24 shadow-sm opacity-90" />
     </div>
     {/* Stock Card (Face Down) on top */}
     <div className="relative z-10 -translate-y-2">
-       <CuajoCard faceDown={true} className="!w-24 shadow-2xl ring-1 ring-black/5" />
+       <CuajoCard faceDown={true} className="!w-20 sm:!w-24 shadow-2xl ring-1 ring-black/5" />
     </div>
   </div>
 );
@@ -113,8 +113,8 @@ const Gameplay = () => {
                 { label: 'Declaration', desc: 'Lay three matching sowee cards face down with one extra card to claim a secret.' },
                 { label: 'Rule', desc: 'The extra card stays hidden and must be used in a valid combination later.' },
               ].map((item) => (
-                <div key={item.label} className="flex gap-4 p-4 sm:p-6 lg:p-8 xl:p-10 bg-white/60 border border-stone-200 rounded-lg">
-                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5 w-28" style={{ color: RED }}>{item.label}</p>
+                <div key={item.label} className="flex flex-col sm:flex-row gap-2 sm:gap-4 p-4 sm:p-6 lg:p-8 xl:p-10 bg-white/60 border border-stone-200 rounded-lg">
+                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5 w-full sm:w-28" style={{ color: RED }}>{item.label}</p>
                   <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -174,8 +174,8 @@ const Gameplay = () => {
                 { label: 'Winning Ways', desc: 'Win by drawing yourself, taking the left discard, or intercepting (calling "Time") a face-up stock draw.' },
                 { label: 'Priority', desc: 'If multiple players win on one card, the drawer takes precedence. Otherwise, counterclockwise order wins.' },
               ].map((item) => (
-                <div key={item.label} className="flex gap-4 p-4 sm:p-6 lg:p-8 xl:p-10 bg-white/60 border border-stone-200 rounded-lg">
-                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5 w-28" style={{ color: RED }}>{item.label}</p>
+                <div key={item.label} className="flex flex-col sm:flex-row gap-2 sm:gap-4 p-4 sm:p-6 lg:p-8 xl:p-10 bg-white/60 border border-stone-200 rounded-lg">
+                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5 w-full sm:w-28" style={{ color: RED }}>{item.label}</p>
                   <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -206,8 +206,8 @@ const Gameplay = () => {
                 { label: 'Penalty', desc: 'Draw face-up for two rounds. Others cannot intercept these draws.' },
                 { label: 'Restriction', desc: 'You cannot win or re-declare Purro during these rounds. Resume normal play in the third round.' },
               ].map((item) => (
-                <div key={item.label} className="flex gap-4 p-4 sm:p-6 lg:p-8 xl:p-10 bg-white/60 border border-stone-200 rounded-lg">
-                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5 w-28" style={{ color: RED }}>{item.label}</p>
+                <div key={item.label} className="flex flex-col sm:flex-row gap-2 sm:gap-4 p-4 sm:p-6 lg:p-8 xl:p-10 bg-white/60 border border-stone-200 rounded-lg">
+                  <p className="text-[10px] font-black tracking-[0.15em] uppercase shrink-0 pt-0.5 w-full sm:w-28" style={{ color: RED }}>{item.label}</p>
                   <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}

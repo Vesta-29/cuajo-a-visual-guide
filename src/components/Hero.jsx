@@ -91,10 +91,9 @@ const Hero = () => {
       <div className="flex flex-col md:flex-row justify-between items-center gap-1 w-full">
         <div className="flex-[0.8] max-w-2xl">
           <p className="text-[10px] font-black tracking-[0.3em] text-stone-500 uppercase mb-5">Heritage of the Philippines</p>
-          <h1 className="leading-tight text-stone-800 mb-8 tracking-tighter ">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-stone-800 mb-8 tracking-tighter">
             Learn <span className="italic" style={{ color: '#E06A7D' }}>Cuajo </span> <br />
             A Digital <span style={{ color: '#E06A7D' }}>Manual</span>
-            
           </h1>
           <div className="flex flex-wrap gap-10 mt-16 pb-8">
             <div>
