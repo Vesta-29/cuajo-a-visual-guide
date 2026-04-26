@@ -65,7 +65,7 @@ const SoweeVisual = () => (
 
 const Gameplay = () => {
   return (
-    <section id="section-03" className="mb-32 scroll-mt-24">
+    <section id="section-03" className="mb-16 scroll-mt-24">
       <SectionHeader
         section="03 — Gameplay"
         title="A counterclockwise dance"

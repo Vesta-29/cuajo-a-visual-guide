@@ -73,7 +73,7 @@ const Objective = () => {
   const visualContainerClass = "w-full md:w-[480px] shrink-0 flex justify-center md:justify-end gap-2";
 
   return (
-    <section id="section-02" className="mb-32 scroll-mt-24">
+    <section id="section-02" className="mb-16 scroll-mt-24">
       <SectionHeader 
         section="02 — Objective"
         title="Form valid combinations (Bahay)"

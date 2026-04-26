@@ -25,7 +25,7 @@ const TheDeck = () => {
   ];
 
   return (
-    <section id="section-01" className="mb-32 scroll-mt-24">
+    <section id="section-01" className="mb-16 scroll-mt-24">
       <SectionHeader 
         section="01 — The Deck"
         title="Seven ranks, four copies"

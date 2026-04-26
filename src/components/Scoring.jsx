@@ -13,7 +13,7 @@ const Scoring = () => {
   ];
 
   return (
-    <section id="section-04" className="mb-32 scroll-mt-24">
+    <section id="section-04" className="mb-16 scroll-mt-24">
       <SectionHeader 
         section="04 — Payment & Scoring"
         title="Winning and Payout"
