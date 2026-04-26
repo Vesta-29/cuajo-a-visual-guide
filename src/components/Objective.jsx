@@ -38,7 +38,8 @@ const highlightWord = (text, word) => {
 const FlipCard = ({ suit, value = 'King', isFlipped }) => {
   return (
     <div
-      style={{ perspective: '600px', width: '80px' }}
+      style={{ perspective: '600px' }}
+      className="!w-28"
     >
       <div
         style={{
@@ -66,40 +67,73 @@ const FlipCard = ({ suit, value = 'King', isFlipped }) => {
 const Objective = () => {
   const [secretsFlipped, setSecretsFlipped] = useState(false);
 
+  // Common wrapper class for all combination rows
+  const rowClass = "p-5 sm:p-7 lg:p-10 xl:p-12 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-10 items-center shadow-sm backdrop-blur-sm";
+  // Consistent width for the visual (card) container
+  const visualContainerClass = "w-full md:w-[480px] shrink-0 flex justify-center md:justify-end gap-2";
+
   return (
     <section id="section-02" className="mb-32 scroll-mt-24">
       <SectionHeader 
         section="02 — Objective"
-        title="Form valid combinations"
-        subtitle="The aim is to form all 16 cards in your winning hand into distinct valid combinations. There are four types of combination that can be used:"
+        title="Form valid combinations (Bahay)"
+        subtitle="The aim is to form all 16 cards in your winning hand into distinct valid combinations (also called bahay). There are five types of combinations that can be used:"
       />
 
       <div className="space-y-8">
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="p-6 sm:p-8 lg:p-12 xl:p-16 bg-white/60 border border-stone-300 rounded-xl shadow-sm backdrop-blur-sm flex flex-col h-full">
-            <h4 className="text-2xl font-serif mb-3 italic text-stone-800">Sets (Trio/Cuarteta)</h4>
-            <p className="text-stone-500 text-sm mb-6 flex-grow">Three or four cards of the same rank in different suits.</p>
-            <div className="flex gap-2">
-              <CuajoCard suit="Oros" value="3" />
-              <CuajoCard suit="Copas" value="3" />
-              <CuajoCard suit="Espadas" value="3" />
-            </div>
-          </div>
-
-          <div className="p-6 sm:p-8 lg:p-12 xl:p-16 bg-white/60 border border-stone-300 rounded-xl shadow-sm backdrop-blur-sm flex flex-col h-full">
-            <h4 className="text-2xl font-serif mb-3 italic text-stone-800">Sequences (Cho)</h4>
-            <p className="text-stone-500 text-sm mb-6 flex-grow">
-              {renderText('Strictly **3-4-5** or **Jack-Horse-King** in one suit. Note: These are the only allowed sequences. Aces cannot be used in runs.')}
+        {/* Trio Row */}
+        <div className={`${rowClass} bg-white/60`}>
+          <div className="flex-1">
+            <h4 className="text-2xl font-serif mb-3 italic text-stone-800">Trio</h4>
+            <p className="text-stone-500 text-sm leading-relaxed">
+              A <strong>Trio</strong> consists of three cards of the same rank, but <strong>different suits</strong>. 
+              <span className="block mt-2 italic text-stone-400">
+                Note: This is not the same as a pung in mahjong, which would require identical suits.
+              </span>
             </p>
-            <div className="flex gap-2">
-              <CuajoCard suit="Bastos" value="3" />
-              <CuajoCard suit="Bastos" value="4" />
-              <CuajoCard suit="Bastos" value="5" />
-            </div>
+          </div>
+          <div className={visualContainerClass}>
+            <CuajoCard suit="Oros" value="3" className="!w-28" />
+            <CuajoCard suit="Copas" value="3" className="!w-28" />
+            <CuajoCard suit="Espadas" value="3" className="!w-28" />
           </div>
         </div>
 
-        <div className="p-6 sm:p-8 lg:p-12 xl:p-16 bg-stone-100 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-8 items-center">
+        {/* Quadro Row */}
+        <div className={`${rowClass} bg-white/60`}>
+          <div className="flex-1">
+            <h4 className="text-2xl font-serif mb-3 italic text-stone-800">Quadro</h4>
+            <p className="text-stone-500 text-sm leading-relaxed">
+              A <strong>Quadro</strong> (or Cuarteta) consists of four cards of the same rank, each from a <strong>different suit</strong>. 
+              Like the Trio, these must be distinct suits to form a valid bahay.
+            </p>
+          </div>
+          <div className={visualContainerClass}>
+            <CuajoCard suit="Oros" value="5" className="!w-28" />
+            <CuajoCard suit="Copas" value="5" className="!w-28" />
+            <CuajoCard suit="Espadas" value="5" className="!w-28" />
+            <CuajoCard suit="Bastos" value="5" className="!w-28" />
+          </div>
+        </div>
+
+        {/* Escalera Row */}
+        <div className={`${rowClass} bg-white/60`}>
+          <div className="flex-1">
+            <h4 className="text-2xl font-serif mb-3 italic text-stone-800">Straight (Escalera)</h4>
+            <p className="text-stone-500 text-sm leading-relaxed">
+              An <strong>Escalera</strong> is a sequence of three consecutive cards of the <strong>same suit</strong>. 
+              The only escaleras possible in cuajo are <strong>3-4-5</strong> and <strong>Sota-Kabayo-Hari</strong>.
+            </p>
+          </div>
+          <div className={visualContainerClass}>
+            <CuajoCard suit="Bastos" value="3" className="!w-28" />
+            <CuajoCard suit="Bastos" value="4" className="!w-28" />
+            <CuajoCard suit="Bastos" value="5" className="!w-28" />
+          </div>
+        </div>
+
+        {/* Secret Section */}
+        <div className="p-5 sm:p-7 lg:p-10 xl:p-12 bg-stone-100 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-10 items-center shadow-sm backdrop-blur-sm">
           <div className="flex-1">
             <h4 className="text-2xl font-serif mb-3 italic text-stone-800">The Secret(Secreto)</h4>
             <p className="text-stone-500 text-sm mb-4">
@@ -110,7 +144,7 @@ const Objective = () => {
             </p>
           </div>
           <div 
-            className="flex gap-1 cursor-pointer p-4 rounded-xl transition-colors hover:bg-stone-200/50"
+            className={`${visualContainerClass} cursor-pointer p-4 rounded-xl transition-colors hover:bg-stone-200/50`}
             onMouseEnter={() => setSecretsFlipped(true)}
             onMouseLeave={() => setSecretsFlipped(false)}
           >
@@ -120,7 +154,8 @@ const Objective = () => {
           </div>
         </div>
 
-        <div className="p-6 sm:p-8 lg:p-12 xl:p-16 bg-white/90 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-8 items-center">
+        {/* Lone Kings Section */}
+        <div className="p-5 sm:p-7 lg:p-10 xl:p-12 bg-white/90 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-10 items-center shadow-sm backdrop-blur-sm">
           <div className="flex-1">
             <h4 className="text-2xl font-serif mb-3 italic text-stone-800">Lone Kings(Hari)</h4>
             <p className="text-stone-500 text-sm leading-relaxed">
@@ -130,9 +165,9 @@ const Objective = () => {
               {renderText('Note: Kings can alternatively be used as part of a set, sequence or secret')}
             </p>
           </div>
-          <div className="flex gap-2">
-            <CuajoCard suit="Oros" value="King" />
-            <CuajoCard suit="Copas" value="King" />
+          <div className={visualContainerClass}>
+            <CuajoCard suit="Oros" value="King" className="!w-28" />
+            <CuajoCard suit="Copas" value="King" className="!w-28" />
           </div>
         </div>
       </div>
