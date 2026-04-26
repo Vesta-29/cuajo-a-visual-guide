@@ -59,17 +59,17 @@ In the Cuajo version, this deck is expanded to 112 cards by using only seven ran
           {/* Suits List */}
           <div className="flex-1 flex flex-col gap-10 w-full bg-white/40 p-4 sm:p-6 md:p-8 lg:p-12 rounded-lg border border-stone-300 shadow-sm backdrop-blur-sm">
             {suits.filter(s => filter === 'All' || filter === s.id).map(suit => (
-              <div key={suit.id} className="flex flex-col md:flex-row items-center gap-6 md:gap-12 pb-12 border-b border-stone-200 last:border-0 last:pb-0">
-                <div className="w-full md:w-48 shrink-0 flex flex-col text-left">
+              <div key={suit.id} className="flex flex-col 2xl:flex-row items-start 2xl:items-center gap-6 2xl:gap-12 pb-12 border-b border-stone-200 last:border-0 last:pb-0">
+                <div className="w-full 2xl:w-48 shrink-0 flex flex-col text-left">
                   <h4 className="text-2xl md:text-3xl font-serif font-bold text-stone-800">
                     {suit.label}
                   </h4>
                   <p className="text-xs text-stone-500 mt-3 leading-relaxed">{suit.desc}</p>
                 </div>
                 
-                <div className="flex-1">
+                <div className="flex-1 w-full">
                   <div
-                    className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 flex-1"
+                    className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full"
                     onMouseLeave={() => { setHoveredKey(null); setHoveredCard(null); }}
                   >
                   {allRanks.map(rank => {
