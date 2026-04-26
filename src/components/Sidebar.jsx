@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, Menu } from 'lucide-react';
+import cardIcon from '../public/images/cuajoCards/cardIcon.png';
 
 export const SidebarItem = ({ id, label, active, onClick }) => (
   <button 
@@ -17,12 +18,14 @@ const Sidebar = ({ activeSection, scrollTo, isMenuOpen, setIsMenuOpen, theme, se
   return (
     <aside className={`fixed inset-y-0 left-0 z-50 w-64 bg-stone-100/80 border-r border-stone-300 transform transition-transform duration-300 lg:translate-x-0 backdrop-blur-md ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
       <div className="p-8 h-full flex flex-col">
-        <div className="mb-12">
-          <h1 className="!text-[35px] font-serif font-bold italic text-stone-800 flex items-center gap-3">
-            <span className="w-7 h-7 rounded-full bg-stone-800 flex items-center justify-center text-white text-[10px] not-italic shadow-lg">♣</span>
-            Cuajo
-          </h1>
-          <p className="!text-[8px] uppercase tracking-[0.2em] text-stone-400 mt-2 font-black">Digital Manual</p>
+        <div className="mb-12 flex items-center gap-4">
+          <div className="w-10 h-14 rounded-md bg-black border-[1.5px] border-[#c0392b] p-1 flex items-center justify-center overflow-hidden shadow-md shrink-0">
+            <img src={cardIcon} alt="Cuajo Card Icon" className="w-full h-full object-contain invert brightness-200" />
+          </div>
+          <div className="flex flex-col justify-center">
+            <h1 className="!text-[32px] font-serif font-bold italic text-stone-800 leading-none">Cuajo</h1>
+            <p className="!text-[8px] uppercase tracking-[0.3em] text-stone-400 mt-1 font-black">Digital Manual</p>
+          </div>
         </div>
 
         <nav className="space-y-2 flex-1">

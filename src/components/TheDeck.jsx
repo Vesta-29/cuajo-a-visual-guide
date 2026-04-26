@@ -13,8 +13,8 @@ const TheDeck = () => {
     { value: '4', active: true, desc: "Fours" },
     { value: '5', active: true, desc: "Fives" },
     { value: 'Jack', active: true, desc: "Jacks (Sota)" },
-    { value: 'Horse', active: true, desc: "Horses (Caballo)" },
-    { value: 'King', active: true, desc: "Kings (Rey)" }
+    { value: 'Horse', active: true, desc: "Horses (Kabayo)" },
+    { value: 'King', active: true, desc: "Kings (Hari)" }
   ];
 
   const suits = [

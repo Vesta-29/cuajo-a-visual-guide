@@ -13,6 +13,7 @@ import Gameplay from './components/Gameplay';
 import Scoring from './components/Scoring';
 
 import creamPaperImg from './public/images/cream-paper.png';
+import cardIcon from './public/images/cuajoCards/cardIcon.png';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('00');
@@ -69,9 +70,21 @@ export default function App() {
       {/* Main Content */}
       <main className="flex-1 lg:pl-64 transition-colors duration-500">
         {/* Mobile Nav Header */}
-        <header className={`lg:hidden sticky top-0 z-40 backdrop-blur-md border-b p-4 flex justify-between items-center ${theme === 'Night' ? 'bg-stone-900/80 border-stone-800' : 'bg-stone-100/80 border-stone-300'}`}>
-          <h1 className="font-serif font-bold italic">Kwaho Guide</h1>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <header className={`lg:hidden sticky top-0 z-40 backdrop-blur-md border-b p-3 flex justify-between items-center ${theme === 'Night' ? 'bg-stone-900/80 border-stone-800' : 'bg-stone-100/80 border-stone-300'}`}>
+          <div className="flex items-center gap-3">
+            <div className="w-7 h-10 rounded-md bg-black border-[1.5px] border-[#c0392b] p-0.5 flex items-center justify-center overflow-hidden shrink-0">
+              <img src={cardIcon} alt="Cuajo Icon" className="w-full h-full object-contain invert brightness-200" />
+            </div>
+            <div className="flex flex-col justify-center">
+              <h1 className="text-xl font-serif font-bold italic leading-none">Cuajo</h1>
+              
+            </div>
+            <div className='pt-6'>
+              <p className="text-[7px] uppercase tracking-[0.2em] text-stone-400 font-black mt-0.5">Digital Manual</p>
+
+            </div>
+          </div>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2">
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </header>
