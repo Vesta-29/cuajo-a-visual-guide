@@ -76,7 +76,10 @@ export default function App() {
               <img src={cardIcon} alt="Cuajo Icon" className="w-full h-full object-contain invert brightness-200" />
             </div>
             <div className="flex flex-col justify-center">
-              <h1 className="text-xl font-serif font-bold italic leading-none">Cuajo</h1>
+              <h1 className="text-lg font-serif font-bold italic leading-none">Cuajo</h1>
+              
+            </div>
+            <div className="pt-6">
               <p className="text-[7px] uppercase tracking-[0.2em] text-stone-400 font-black mt-0.5">Digital Manual</p>
             </div>
           </div>

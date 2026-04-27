@@ -81,15 +81,19 @@ const Gameplay = () => {
       />
 
       {/* Two-column info card — Setup and Deal */}
-      <div className="bg-white/60 border border-stone-300 rounded-xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 2xl:p-16 mb-14 grid md:grid-cols-2 gap-10 backdrop-blur-sm shadow-sm">
+      <div className="bg-white/60 border border-stone-300 rounded-xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 2xl:p-16 mb-14 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-10 items-center backdrop-blur-sm shadow-sm">
         <div>
-          <p className="text-[10px] font-black tracking-[0.2em] uppercase mb-3" style={{ color: RED }}>The Deal</p>
+          <p className="text-[13px] font-black tracking-[0.2em] uppercase mb-3" style={{ color: RED }}>The Deal</p>
           <p className="text-sm text-stone-600 leading-relaxed">
             The dealer (Mano) distributes in a <strong>5-5-5-1 sequence</strong>. The Mano takes <strong>16 cards</strong>; all other players receive <strong>15</strong>. The remaining cards form the stock.
           </p>
         </div>
+
+        {/* Divider */}
+        <div className="h-px w-full md:w-px md:h-24 bg-stone-300/50" />
+
         <div>
-          <p className="text-[10px] font-black tracking-[0.2em] uppercase mb-3" style={{ color: RED }}>Setup</p>
+          <p className="text-[13px] font-black tracking-[0.2em] uppercase mb-3" style={{ color: RED }}>Setup</p>
           <p className="text-sm text-stone-600 leading-relaxed">
            The mano shuffles the deck and offers a cut to the player to their <strong>left</strong>. Like mahjong, deal and gameplay is <strong>counterclockwise</strong>.
           </p>
