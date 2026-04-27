@@ -99,7 +99,7 @@ export default function App() {
           </button>
         </header>
 
-        <div className="max-w-[100%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-5 sm:px-10 md:px-16 lg:px-20 py-10 md:py-20 lg:py-32">
+        <div className="max-w-[100%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-5 sm:px-10 md:px-16 lg:px-20 pt-10 pb-8 md:pt-20 md:pb-12 lg:pt-32 lg:pb-16">
           <Hero />
 
           <Introduction />
@@ -113,7 +113,7 @@ export default function App() {
           <Scoring />
 
           {/* Footer */}
-          <footer className="pt-16 pb-24 border-t border-stone-400/40 flex flex-col md:flex-row justify-between items-center gap-8">
+          <footer className="pt-16 pb-4 border-t border-stone-400/40 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
             <div className="flex flex-col gap-1">
               <h4 className="text-lg font-serif italic">
                 Cuajo: Digital Manual
@@ -123,15 +123,29 @@ export default function App() {
               </p>
             </div>
 
-            <div className="flex items-center gap-6">
-              <a
-                href="https://www.pagat.com/rummy/cuajo.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`px-8 py-3 text-[10px] uppercase font-bold tracking-widest rounded-md transition-all hover:shadow-lg shadow-md ${theme === "Night" ? "bg-stone-200 text-stone-900 hover:bg-white" : "bg-stone-800 text-stone-100 hover:bg-stone-700"}`}
-              >
-                Official PAGAT Rules
-              </a>
+            <div className="flex flex-col gap-1.5 mt-4 md:mt-0 md:text-right">
+              <p className="text-[9px] uppercase tracking-widest text-stone-500 font-bold">
+                Sources & References
+              </p>
+              <div className="flex flex-wrap items-center gap-3 text-[10px] text-stone-400 md:justify-end">
+                <a
+                  href="https://www.pagat.com/rummy/cuajo.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#E06A7D] transition-colors underline decoration-stone-300/50 underline-offset-2"
+                >
+                  pagat.com
+                </a>
+                <span className="text-stone-300/50">•</span>
+                <a
+                  href="https://mahjongero.com/2022/09/17/cuajo-an-echo-of-spain-in-la-perla-del-mar-de-oriente/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#E06A7D] transition-colors underline decoration-stone-300/50 underline-offset-2"
+                >
+                  mahjongero.com
+                </a>
+              </div>
             </div>
           </footer>
         </div>
