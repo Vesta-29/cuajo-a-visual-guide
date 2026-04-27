@@ -31,11 +31,13 @@ const Scoring = () => {
   return (
     <section id="section-04" className="mb-16 scroll-mt-24">
       <SectionHeader
-        section="04 — Payment & Scoring"
+        section="04 — End Game"
         title="Winning and Payout"
         subtitle={
           <>
-            Upon winning, the game transitions to the payout phase. Winnings are
+            In order to <span style={{ color: RED }}>win</span>, the player must
+            achieve <strong>16 cards</strong> in valid combinations. Upon
+            winning, the game transitions to the payout phase. Winnings are
             collected only from the <strong>two opposing players</strong>, never
             the partner.
           </>
@@ -123,41 +125,41 @@ const Scoring = () => {
               </p>
             </div>
 
-            {/* Group 2: Trio of Aces */}
+            {/* Group 2: Trio of Four */}
             <div className="flex flex-col items-center gap-4">
               <div className="flex gap-1">
                 <CuajoCard
-                  suit="Oros"
-                  value="Ace"
+                  suit="Bastos"
+                  value="4"
                   className="!w-16 sm:!w-20 shadow-sm"
                 />
                 <CuajoCard
                   suit="Copas"
-                  value="Ace"
-                  className="!w-16 sm:!w-20 shadow-sm"
-                />
-                <CuajoCard
-                  suit="Espadas"
-                  value="Ace"
-                  className="!w-16 sm:!w-20 shadow-sm"
-                />
-              </div>
-              <p className="text-[9px] font-black tracking-widest text-stone-400 uppercase">
-                Trio · Aces
-              </p>
-            </div>
-
-            {/* Group 3: Escalera Espadas */}
-            <div className="flex flex-col items-center gap-4">
-              <div className="flex gap-1">
-                <CuajoCard
-                  suit="Espadas"
-                  value="3"
+                  value="4"
                   className="!w-16 sm:!w-20 shadow-sm"
                 />
                 <CuajoCard
                   suit="Espadas"
                   value="4"
+                  className="!w-16 sm:!w-20 shadow-sm"
+                />
+              </div>
+              <p className="text-[9px] font-black tracking-widest text-stone-400 uppercase">
+                Trio · 4s
+              </p>
+            </div>
+
+            {/* Group 3: Trio of 5s */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="flex gap-1">
+                <CuajoCard
+                  suit="Copas"
+                  value="5"
+                  className="!w-16 sm:!w-20 shadow-sm"
+                />
+                <CuajoCard
+                  suit="Oros"
+                  value="5"
                   className="!w-16 sm:!w-20 shadow-sm"
                 />
                 <CuajoCard
@@ -167,7 +169,7 @@ const Scoring = () => {
                 />
               </div>
               <p className="text-[9px] font-black tracking-widest text-stone-400 uppercase">
-                Escalera · Espadas
+                Trio · 5s
               </p>
             </div>
           </div>
