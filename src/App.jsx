@@ -52,7 +52,8 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen flex ${theme === "Night" ? "bg-stone-950 text-stone-200" : "bg-[#FDFCF9] text-stone-900"}`}
+      data-theme={theme}
+      className={`min-h-screen flex ${theme === "Night" ? "bg-stone-950 text-stone-200" : "bg-[#FDFCF9] text-stone-900"} transition-colors duration-500`}
       style={{
         backgroundImage: `url(${creamPaperImg})`,
         backgroundRepeat: "repeat",

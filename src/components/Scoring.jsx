@@ -896,6 +896,15 @@ const Scoring = () => {
           </div>
         </div>
       </div>
+
+      <div className="mt-12 text-center max-w-2xl mx-auto px-4">
+        <p className="text-xs text-stone-500 italic leading-relaxed">
+          * Note: The payment amounts and values shown in this guide are used for
+          illustrative purposes. Actual betting stakes, house rules, and payouts
+          may vary depending on the region or the specific group you are playing
+          with. Always agree on the rules before starting a game.
+        </p>
+      </div>
     </section>
   );
 };
