@@ -78,7 +78,7 @@ const TheDeck = () => {
           >
             All 112{" "}
             <span
-              className={`px-1.5 py-0.5 rounded-full text-[9px] ${filter === "All" ? "bg-stone-600" : "bg-stone-200"}`}
+              className={`px-1.5 py-0.5 rounded-full text-[9px] transition-colors ${filter === "All" ? "bg-stone-600 text-white" : "bg-stone-200 text-stone-600"}`}
             >
               112
             </span>
@@ -91,7 +91,7 @@ const TheDeck = () => {
             >
               {s.label}{" "}
               <span
-                className={`px-1.5 py-0.5 rounded-full text-[9px] ${filter === s.id ? "bg-stone-600" : "bg-stone-200"}`}
+                className={`px-1.5 py-0.5 rounded-full text-[9px] transition-colors ${filter === s.id ? "bg-stone-600 text-white" : "bg-stone-200 text-stone-600"}`}
               >
                 28
               </span>
