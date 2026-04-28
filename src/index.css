@@ -61,13 +61,14 @@ h1, h2, h3, h4 {
 
 /* --- Night Theme --- */
 [data-theme="Night"] .bg-white,
+[data-theme="Night"] .bg-white\/40,
+[data-theme="Night"] .bg-white\/60,
 [data-theme="Night"] .bg-\[\#FDFCF9\] {
   background-color: #0f172a !important;
   border-color: #1e293b !important;
   color: #e2e8f0 !important;
 }
 
-[data-theme="Night"] .bg-white\/60,
 [data-theme="Night"] .bg-stone-50,
 [data-theme="Night"] .bg-stone-100\/80 {
   background-color: rgba(15, 23, 42, 0.8) !important;
@@ -100,6 +101,26 @@ h1, h2, h3, h4 {
 [data-theme="Night"] .border-stone-200,
 [data-theme="Night"] .border-stone-300 {
   border-color: #334155 !important;
+}
+
+[data-theme="Night"] .bg-stone-200 {
+  background-color: #1e293b !important;
+  color: #94a3b8 !important;
+}
+
+[data-theme="Night"] .bg-stone-600 {
+  background-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="Night"] .bg-stone-700,
+[data-theme="Night"] .bg-stone-800 {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="Night"] .hover\:bg-stone-100:hover {
+  background-color: #1e293b !important;
 }
 
 [data-theme="Night"] .shadow-sm,
