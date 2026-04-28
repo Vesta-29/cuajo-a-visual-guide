@@ -74,7 +74,7 @@ const CuajoCard = ({
           <img 
             src={cardBackUrl} 
             alt="Card Back" 
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover scale-[1.8]"
           />
         ) : (
           <span className="text-white/10 text-4xl">?</span>
