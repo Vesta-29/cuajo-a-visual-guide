@@ -168,7 +168,7 @@ const TheDeck = () => {
           </div>
 
           {/* Hover Preview Panel */}
-          <div className="w-full lg:!w-[291px] lg:!min-w-[291px] lg:!max-w-[291px] shrink-0 lg:sticky lg:top-24 bg-stone-800 border border-stone-700 rounded-lg p-6 shadow-2xl min-h-[400px] max-h-[400px] flex flex-col items-center justify-center overflow-hidden">
+          <div className="hidden sm:flex w-full lg:!w-[291px] lg:!min-w-[291px] lg:!max-w-[291px] shrink-0 lg:sticky lg:top-24 bg-stone-800 border border-stone-700 rounded-lg p-6 shadow-2xl min-h-[400px] max-h-[400px] flex-col items-center justify-center overflow-hidden">
             {hoveredCard ? (
               <div className="flex flex-col items-center gap-6 animate-in fade-in zoom-in duration-200 w-full">
                 <CuajoCard
@@ -192,9 +192,9 @@ const TheDeck = () => {
                 </div>
               </div>
             ) : (
-              <div className="text-center text-stone-500 w-full">
+              <div className="hidden sm:block text-center text-stone-500 w-full">
                 <h4 className="text-xl font-serif mb-3 text-stone-300 break-words">
-                  Hover or tap a card
+                  Hover a card
                 </h4>
                 <p className="text-sm text-stone-500 leading-relaxed break-words">
                   Each card appears four times in the deck to form the 112-card
