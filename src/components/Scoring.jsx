@@ -452,7 +452,7 @@ const Scoring = () => {
 
         {/* Right Side: Payout Table */}
         <div className="flex-1 border-t lg:border-t-0 lg:border-l border-stone-300 flex flex-col bg-white/60">
-          <div className="grid grid-cols-[1fr_auto] bg-stone-100/50 border-b border-stone-200 px-6 sm:px-8 py-4">
+          <div className="grid grid-cols-[1fr_auto] bg-stone-50 border-b border-stone-200 px-6 sm:px-8 py-4">
             <span className="text-[10px] font-black tracking-widest uppercase text-stone-400">
               Winning Scenario
             </span>
@@ -460,7 +460,7 @@ const Scoring = () => {
               Payout
             </span>
           </div>
-          <div className="divide-y divide-stone-200/60 flex-1 flex flex-col justify-center">
+          <div className="divide-y divide-stone-200 flex-1 flex flex-col justify-center">
             {[
               {
                 label: "Ideal Bunot",
@@ -486,26 +486,24 @@ const Scoring = () => {
             ].map((item) => (
               <div
                 key={item.label}
-                className={`grid grid-cols-[1fr_auto] px-6 sm:px-8 py-5 items-center gap-4 ${
-                  item.faded ? "bg-stone-50/40" : ""
+                className={`grid grid-cols-[1fr_auto] px-6 sm:px-8 py-5 items-center gap-4 transition-colors duration-300 hover:bg-stone-50 ${
+                  item.faded
+                    ? "opacity-50 saturate-50 bg-transparent"
+                    : "bg-transparent"
                 }`}
               >
                 <div>
-                  <p
-                    className={`text-sm font-bold ${item.faded ? "text-stone-400" : "text-stone-800"}`}
-                  >
+                  <p className="text-sm font-bold text-stone-800 transition-colors">
                     {item.label}
                   </p>
-                  <p
-                    className={`text-xs ${item.faded ? "text-stone-400" : "text-stone-500"} leading-relaxed`}
-                  >
+                  <p className="text-xs text-stone-500 leading-relaxed transition-colors">
                     {item.desc}
                   </p>
                 </div>
                 <div className="text-right">
                   <span
-                    className={`text-2xl font-serif italic ${item.faded ? "text-stone-400" : ""}`}
-                    style={{ color: item.faded ? undefined : RED }}
+                    className="text-2xl font-serif italic transition-colors"
+                    style={{ color: RED }}
                   >
                     {item.amount}
                   </span>
@@ -899,10 +897,10 @@ const Scoring = () => {
 
       <div className="mt-12 text-center max-w-2xl mx-auto px-4">
         <p className="text-xs text-stone-500 italic leading-relaxed">
-          * Note: The payment amounts and values shown in this guide are used for
-          illustrative purposes. Actual betting stakes, house rules, and payouts
-          may vary depending on the region or the specific group you are playing
-          with. Always agree on the rules before starting a game.
+          * Note: The payment amounts and values shown in this guide are used
+          for illustrative purposes. Actual betting stakes, house rules, and
+          payouts may vary depending on the region or the specific group you are
+          playing with. Always agree on the rules before starting a game.
         </p>
       </div>
     </section>

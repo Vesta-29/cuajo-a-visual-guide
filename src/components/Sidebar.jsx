@@ -30,11 +30,11 @@ const Sidebar = ({
 }) => {
   return (
     <aside
-      className={`fixed inset-y-0 left-0 z-50 w-64 bg-stone-100/80 border-r border-stone-300 transform transition-transform duration-300 lg:translate-x-0 backdrop-blur-md ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
+      className="hidden lg:flex fixed inset-y-0 left-0 z-50 w-64 bg-stone-100/80 border-r border-stone-300 flex-col backdrop-blur-md"
     >
       <div className="p-8 h-full flex flex-col">
         <div className="mb-12 flex items-center gap-4">
-          <div className="w-10 h-14 rounded-md bg-black border-[1.5px] border-[#c0392b] p-1 flex items-center justify-center overflow-hidden shadow-md shrink-0">
+          <div className="w-10 h-14 rounded-md bg-stone-900 border-[1.5px] border-[#c0392b] p-1 flex items-center justify-center overflow-hidden shadow-md shrink-0">
             <img
               src={cardIcon}
               alt="Cuajo Card Icon"

@@ -62,30 +62,44 @@ h1, h2, h3, h4 {
 /* --- Night Theme --- */
 [data-theme="Night"] .bg-white,
 [data-theme="Night"] .bg-\[\#FDFCF9\] {
-  background-color: #1c1917 !important;
-  border-color: #292524 !important;
-  color: #e7e5e4 !important;
+  background-color: #0f172a !important;
+  border-color: #1e293b !important;
+  color: #e2e8f0 !important;
 }
 
 [data-theme="Night"] .bg-white\/60,
-[data-theme="Night"] .bg-stone-50 {
-  background-color: rgba(28, 25, 23, 0.8) !important;
-  border-color: #44403c !important;
+[data-theme="Night"] .bg-stone-50,
+[data-theme="Night"] .bg-stone-100\/80 {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="Night"] .bg-stone-200\/50 {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+[data-theme="Night"] .hover\:bg-white\/50:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 [data-theme="Night"] .text-stone-800,
 [data-theme="Night"] .text-stone-900 {
-  color: #f5f5f4 !important;
+  color: #f8fafc !important;
 }
 
 [data-theme="Night"] .text-stone-600,
 [data-theme="Night"] .text-stone-700 {
-  color: #d6d3d1 !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="Night"] .text-stone-400,
+[data-theme="Night"] .text-stone-500 {
+  color: #94a3b8 !important;
 }
 
 [data-theme="Night"] .border-stone-200,
 [data-theme="Night"] .border-stone-300 {
-  border-color: #44403c !important;
+  border-color: #334155 !important;
 }
 
 [data-theme="Night"] .shadow-sm,

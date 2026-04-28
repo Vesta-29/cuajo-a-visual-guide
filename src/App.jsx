@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Palette } from "lucide-react";
 
 import Sidebar from "./components/Sidebar";
 import Hero from "./components/Hero";
@@ -16,6 +16,20 @@ export default function App() {
   const [activeSection, setActiveSection] = useState("00");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState("Classic");
+
+  const sectionLabels = {
+    "00": "Introduction",
+    "01": "The Deck",
+    "02": "Objective",
+    "03": "Gameplay",
+    "04": "End Game",
+  };
+
+  const cycleTheme = () => {
+    const themes = ["Classic", "Faded", "Night"];
+    const currentIndex = themes.indexOf(theme);
+    setTheme(themes[(currentIndex + 1) % themes.length]);
+  };
 
   // Smooth scroll to sections
   const scrollTo = (id) => {
@@ -50,10 +64,36 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Keyboard navigation for 'turning pages'
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Don't intercept if user is interacting with an input, though unlikely in this app
+      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+
+      const sections = ["00", "01", "02", "03", "04"];
+      const currentIndex = sections.indexOf(activeSection);
+
+      if (e.key === "ArrowRight") {
+        if (currentIndex < sections.length - 1) {
+          e.preventDefault();
+          scrollTo(sections[currentIndex + 1]);
+        }
+      } else if (e.key === "ArrowLeft") {
+        if (currentIndex > 0) {
+          e.preventDefault();
+          scrollTo(sections[currentIndex - 1]);
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeSection]);
+
   return (
     <div
       data-theme={theme}
-      className={`min-h-screen flex ${theme === "Night" ? "bg-stone-950 text-stone-200" : "bg-[#FDFCF9] text-stone-900"} transition-colors duration-500`}
+      className={`min-h-screen flex ${theme === "Night" ? "bg-slate-950 text-slate-200" : "bg-[#FDFCF9] text-stone-900"} transition-colors duration-500`}
       style={{
         backgroundImage: `url(${creamPaperImg})`,
         backgroundRepeat: "repeat",
@@ -73,10 +113,10 @@ export default function App() {
       <main className="flex-1 lg:pl-64 transition-colors duration-500">
         {/* Mobile Nav Header */}
         <header
-          className={`lg:hidden sticky top-0 z-40 backdrop-blur-md border-b p-3 flex justify-between items-center ${theme === "Night" ? "bg-stone-900/80 border-stone-800" : "bg-stone-100/80 border-stone-300"}`}
+          className={`lg:hidden sticky top-0 z-40 backdrop-blur-md border-b p-3 flex justify-between items-center relative ${theme === "Night" ? "bg-slate-900/80 border-slate-800" : "bg-stone-100/80 border-stone-300"}`}
         >
           <div className="flex items-center gap-3">
-            <div className="w-7 h-10 rounded-md bg-black border-[1.5px] border-[#c0392b] p-0.5 flex items-center justify-center overflow-hidden shrink-0">
+            <div className="w-7 h-10 rounded-md bg-stone-900 border-[1.5px] border-[#c0392b] p-0.5 flex items-center justify-center overflow-hidden shrink-0">
               <img
                 src={cardIcon}
                 alt="Cuajo Icon"
@@ -88,15 +128,54 @@ export default function App() {
                 Cuajo
               </h1>
             </div>
-            <div className="pt-6">
+            <div className="pt-6 hidden sm:block">
               <p className="text-[7px] uppercase tracking-[0.2em] text-stone-400 font-black mt-0.5">
                 Digital Manual
               </p>
             </div>
           </div>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2">
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
+          
+          <div className="flex items-center gap-2">
+            <button 
+              onClick={cycleTheme} 
+              className={`p-2 rounded-full border transition-colors ${theme === "Night" ? "border-slate-700 hover:bg-slate-800" : "border-stone-300 hover:bg-stone-200"}`}
+              aria-label="Cycle Theme"
+            >
+              <Palette size={16} />
+            </button>
+            <div className="relative">
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)} 
+                className={`flex items-center gap-3 px-4 py-1.5 rounded-full border transition-colors ${theme === "Night" ? "border-slate-700 bg-slate-800/50 text-slate-200" : "border-stone-300 bg-stone-50/50 text-stone-800"}`}
+              >
+                <div className="flex items-center gap-2">
+                  <span className={`font-mono text-[10px] ${theme === "Night" ? "text-slate-400" : "text-stone-500"}`}>{activeSection}</span>
+                  <span className="text-sm font-medium hidden sm:inline-block">{sectionLabels[activeSection]}</span>
+                </div>
+                {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
+              </button>
+              
+              {/* Dropdown Menu */}
+              {isMenuOpen && (
+                <div className={`absolute top-full right-0 mt-2 w-48 rounded-xl border shadow-xl overflow-hidden flex flex-col z-50 ${theme === "Night" ? "bg-slate-900 border-slate-700" : "bg-white border-stone-200"}`}>
+                  {Object.entries(sectionLabels).map(([id, label]) => (
+                    <button
+                      key={id}
+                      onClick={() => scrollTo(id)}
+                      className={`flex items-center gap-3 px-4 py-3 text-sm text-left transition-colors ${
+                        activeSection === id 
+                          ? (theme === "Night" ? "bg-slate-800 text-slate-100 font-semibold" : "bg-stone-100 text-stone-900 font-semibold") 
+                          : (theme === "Night" ? "text-slate-400 hover:bg-slate-800/50 hover:text-slate-200" : "text-stone-500 hover:bg-stone-50 hover:text-stone-800")
+                      }`}
+                    >
+                      <span className={`font-mono text-[10px] ${activeSection === id ? "opacity-100" : "opacity-50"}`}>{id}</span>
+                      <span>{label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
         </header>
 
         <div className="max-w-[100%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-5 sm:px-10 md:px-16 lg:px-20 pt-10 pb-8 md:pt-20 md:pb-12 lg:pt-32 lg:pb-16">
