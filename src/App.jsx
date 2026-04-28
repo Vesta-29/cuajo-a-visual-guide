@@ -183,7 +183,7 @@ export default function App() {
           </div>
         </header>
 
-        <div className="max-w-[100%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-5 sm:px-10 md:px-16 lg:px-20 pt-10 pb-8 md:pt-20 md:pb-12 lg:pt-32 lg:pb-16">
+        <div className="max-w-[100%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-3 sm:px-6 md:px-10 lg:px-20 pt-10 pb-8 md:pt-20 md:pb-12 lg:pt-32 lg:pb-16">
           <Hero />
 
           <Introduction />

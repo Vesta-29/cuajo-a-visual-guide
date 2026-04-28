@@ -107,7 +107,7 @@ const Gameplay = () => {
       />
 
       {/* Two-column info card — Setup and Deal */}
-      <div className="bg-white/60 border border-stone-300 rounded-xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 2xl:p-16 mb-14 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-10 items-center backdrop-blur-sm shadow-sm">
+      <div className="bg-white/60 border border-stone-300 rounded-xl p-6 sm:p-8 lg:p-12 xl:p-14 2xl:p-16 mb-14 grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-10 items-center backdrop-blur-sm shadow-sm">
         <div>
           <p
             className="text-[13px] font-black tracking-[0.2em] uppercase mb-3"
@@ -146,7 +146,7 @@ const Gameplay = () => {
           <div className="flex-1 space-y-5">
             <div className="flex items-baseline gap-5">
               <span
-                className="text-7xl font-serif italic leading-none shrink-0"
+              className="text-5xl sm:text-7xl font-serif italic leading-none shrink-0"
                 style={{ color: RED }}
               >
                 1
@@ -192,7 +192,7 @@ const Gameplay = () => {
               ))}
             </div>
           </div>
-          <div className="w-full md:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
+          <div className="w-full md:w-44 lg:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
             <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-400">
               Sowee Visual
             </p>
@@ -208,7 +208,7 @@ const Gameplay = () => {
           <div className="flex-1 space-y-5">
             <div className="flex items-baseline gap-5">
               <span
-                className="text-7xl font-serif italic leading-none shrink-0"
+              className="text-5xl sm:text-7xl font-serif italic leading-none shrink-0"
                 style={{ color: RED }}
               >
                 2
@@ -253,7 +253,7 @@ const Gameplay = () => {
               ))}
             </div>
           </div>
-          <div className="w-full md:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
+          <div className="w-full md:w-44 lg:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
             <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-400">
               The Stock
             </p>
@@ -269,7 +269,7 @@ const Gameplay = () => {
           <div className="flex-1 space-y-5">
             <div className="flex items-baseline gap-5">
               <span
-                className="text-7xl font-serif italic leading-none shrink-0"
+              className="text-5xl sm:text-7xl font-serif italic leading-none shrink-0"
                 style={{ color: RED }}
               >
                 3
@@ -323,7 +323,7 @@ const Gameplay = () => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
+          <div className="w-full md:w-44 lg:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
             <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-400">
               Hari signal
             </p>
@@ -343,7 +343,7 @@ const Gameplay = () => {
           <div className="flex-1 space-y-5">
             <div className="flex items-baseline gap-5">
               <span
-                className="text-7xl font-serif italic leading-none shrink-0"
+              className="text-5xl sm:text-7xl font-serif italic leading-none shrink-0"
                 style={{ color: RED }}
               >
                 4
@@ -384,7 +384,7 @@ const Gameplay = () => {
               ))}
             </div>
           </div>
-          <div className="w-full md:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
+          <div className="w-full md:w-44 lg:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
             <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-400">
               Losing Purro
             </p>
@@ -411,7 +411,7 @@ const Gameplay = () => {
           <div className="flex-1 space-y-5">
             <div className="flex items-baseline gap-5">
               <span
-                className="text-7xl font-serif italic leading-none shrink-0"
+              className="text-5xl sm:text-7xl font-serif italic leading-none shrink-0"
                 style={{ color: RED }}
               >
                 5
@@ -430,7 +430,7 @@ const Gameplay = () => {
               shuffles and deals for the next round.
             </div>
           </div>
-          <div className="w-full md:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
+          <div className="w-full md:w-44 lg:w-56 shrink-0 flex flex-col items-center gap-4 p-6 bg-stone-800 rounded-xl shadow-2xl">
             <p className="text-[10px] font-black tracking-[0.2em] uppercase text-stone-400">
               Empty Stock
             </p>

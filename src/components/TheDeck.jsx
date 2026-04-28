@@ -102,7 +102,7 @@ const TheDeck = () => {
         {/* Content */}
         <div className="flex flex-col lg:flex-row gap-8 items-start relative">
           {/* Suits List */}
-          <div className="flex-1 flex flex-col gap-10 w-full bg-white/40 p-4 sm:p-6 md:p-8 lg:p-12 rounded-lg border border-stone-300 shadow-sm backdrop-blur-sm">
+          <div className="flex-1 flex flex-col gap-10 w-full bg-white/40 p-3 sm:p-6 md:p-8 lg:p-12 rounded-lg border border-stone-300 shadow-sm backdrop-blur-sm">
             {suits
               .filter((s) => filter === "All" || filter === s.id)
               .map((suit) => (
@@ -121,7 +121,7 @@ const TheDeck = () => {
 
                   <div className="flex-1 w-full">
                     <div
-                      className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full"
+                      className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-6 md:gap-8 w-full"
                       onMouseLeave={() => {
                         setHoveredKey(null);
                         setHoveredCard(null);

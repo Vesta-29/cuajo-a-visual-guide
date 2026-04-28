@@ -215,7 +215,7 @@ const Scoring = () => {
       />
 
       {/* Two-column info card — The Bunot and Reveal Phase */}
-      <div className="bg-white/60 border border-stone-300 rounded-xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 2xl:p-16 mb-14 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-10 items-center backdrop-blur-sm shadow-sm">
+      <div className="bg-white/60 border border-stone-300 rounded-xl p-6 sm:p-8 lg:p-12 xl:p-14 2xl:p-16 mb-14 grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-10 items-center backdrop-blur-sm shadow-sm">
         <div>
           <p
             className="text-[13px] font-black tracking-[0.2em] uppercase mb-3"
@@ -542,7 +542,7 @@ const Scoring = () => {
       >
         {/* All content — no z-10 on this wrapper */}
         <div className="relative">
-          <div className="flex flex-col lg:flex-row gap-12 items-start mb-16">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start mb-16">
             <div className="flex-1">
               <p
                 className="text-[10px] font-black tracking-[0.2em] uppercase mb-3"

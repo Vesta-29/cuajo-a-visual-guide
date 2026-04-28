@@ -58,10 +58,10 @@ const Objective = () => {
 
   // Common wrapper class for all combination rows
   const rowClass =
-    "p-5 sm:p-7 lg:p-10 xl:p-12 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-10 items-center shadow-sm backdrop-blur-sm";
+    "p-3 sm:p-7 lg:p-10 xl:p-12 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-6 md:gap-10 items-center shadow-sm backdrop-blur-sm";
   // Consistent width for the visual (card) container
   const visualContainerClass =
-    "w-full md:w-[480px] shrink-0 flex justify-center md:justify-end gap-2";
+    "w-full md:w-[320px] lg:w-[460px] shrink-0 flex flex-wrap justify-center md:justify-end gap-2";
 
   return (
     <section id="section-02" className="mb-16 scroll-mt-24">
