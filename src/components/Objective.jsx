@@ -9,7 +9,7 @@ const FlipCard = ({ suit, value = "King", isFlipped }) => {
   return (
     <div
       style={{ perspective: "600px" }}
-      className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
+      className="!w-full"
     >
       <div
         style={{
@@ -61,7 +61,7 @@ const Objective = () => {
     "p-3 sm:p-7 lg:p-10 xl:p-12 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-6 md:gap-10 items-center shadow-sm backdrop-blur-sm";
   // Consistent width for the visual (card) container
   const visualContainerClass =
-    "w-full md:w-[320px] lg:w-[460px] shrink-0 flex flex-wrap justify-center md:justify-end gap-2";
+    "w-full md:w-[340px] lg:w-[460px] shrink-0";
 
   return (
     <section id="section-02" className="mb-16 scroll-mt-24">
@@ -98,22 +98,11 @@ const Objective = () => {
               </span>
             </p>
           </div>
-          <div className={visualContainerClass}>
-            <CuajoCard
-              suit="Oros"
-              value="3"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
-            <CuajoCard
-              suit="Copas"
-              value="3"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
-            <CuajoCard
-              suit="Espadas"
-              value="3"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
+          <div className={`${visualContainerClass} grid grid-cols-4 gap-2`}>
+            <CuajoCard suit="Oros" value="3" className="!w-full" />
+            <CuajoCard suit="Copas" value="3" className="!w-full" />
+            <CuajoCard suit="Espadas" value="3" className="!w-full" />
+            <div className="invisible" aria-hidden="true" />
           </div>
         </div>
 
@@ -129,27 +118,11 @@ const Objective = () => {
               the Trio, these must be distinct suits to form a valid bahay.
             </p>
           </div>
-          <div className={visualContainerClass}>
-            <CuajoCard
-              suit="Oros"
-              value="5"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
-            <CuajoCard
-              suit="Copas"
-              value="5"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
-            <CuajoCard
-              suit="Espadas"
-              value="5"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
-            <CuajoCard
-              suit="Bastos"
-              value="5"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
+          <div className={`${visualContainerClass} grid grid-cols-4 gap-2`}>
+            <CuajoCard suit="Oros" value="5" className="!w-full" />
+            <CuajoCard suit="Copas" value="5" className="!w-full" />
+            <CuajoCard suit="Espadas" value="5" className="!w-full" />
+            <CuajoCard suit="Bastos" value="5" className="!w-full" />
           </div>
         </div>
 
@@ -166,27 +139,16 @@ const Objective = () => {
               <strong>Sota-Kabayo-Hari</strong>.
             </p>
           </div>
-          <div className={visualContainerClass}>
-            <CuajoCard
-              suit="Bastos"
-              value="3"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
-            <CuajoCard
-              suit="Bastos"
-              value="4"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
-            <CuajoCard
-              suit="Bastos"
-              value="5"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
+          <div className={`${visualContainerClass} grid grid-cols-4 gap-2`}>
+            <CuajoCard suit="Bastos" value="3" className="!w-full" />
+            <CuajoCard suit="Bastos" value="4" className="!w-full" />
+            <CuajoCard suit="Bastos" value="5" className="!w-full" />
+            <div className="invisible" aria-hidden="true" />
           </div>
         </div>
 
         {/* Secret Section */}
-        <div className="p-5 sm:p-7 lg:p-10 xl:p-12 bg-stone-100 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-10 items-center shadow-sm backdrop-blur-sm">
+        <div className={`${rowClass} bg-stone-100`}>
           <div className="flex-1">
             <h4 className="text-2xl font-serif mb-3 italic text-stone-800">
               The Secret(Secreto)
@@ -204,24 +166,19 @@ const Objective = () => {
             </p>
           </div>
           <div
-            className={`${visualContainerClass} cursor-pointer p-4 rounded-xl transition-colors hover:bg-stone-200/50`}
+            className={`${visualContainerClass} grid grid-cols-4 gap-2 cursor-pointer p-4 rounded-xl transition-colors hover:bg-stone-200/50`}
             onMouseEnter={() => setSecretsFlipped(true)}
             onMouseLeave={() => setSecretsFlipped(false)}
             onClick={() => setSecretsFlipped((f) => !f)}
           >
             {[1, 2, 3, 4].map((i) => (
-              <FlipCard
-                key={i}
-                suit="Oros"
-                value="4"
-                isFlipped={secretsFlipped}
-              />
+              <FlipCard key={i} suit="Oros" value="4" isFlipped={secretsFlipped} />
             ))}
           </div>
         </div>
 
         {/* Lone Kings Section */}
-        <div className="p-5 sm:p-7 lg:p-10 xl:p-12 bg-white/90 border border-stone-300 rounded-xl flex flex-col md:flex-row gap-10 items-center shadow-sm backdrop-blur-sm">
+        <div className={`${rowClass} bg-white/90`}>
           <div className="flex-1">
             <h4 className="text-2xl font-serif mb-3 italic text-stone-800">
               Lone Kings(Hari)
@@ -236,17 +193,11 @@ const Objective = () => {
               or secret.
             </span>
           </div>
-          <div className={visualContainerClass}>
-            <CuajoCard
-              suit="Oros"
-              value="King"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
-            <CuajoCard
-              suit="Copas"
-              value="King"
-              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
-            />
+          <div className={`${visualContainerClass} grid grid-cols-4 gap-2`}>
+            <div className="invisible" aria-hidden="true" />
+            <CuajoCard suit="Oros" value="King" className="!w-full" />
+            <CuajoCard suit="Copas" value="King" className="!w-full" />
+            <div className="invisible" aria-hidden="true" />
           </div>
         </div>
       </div>
