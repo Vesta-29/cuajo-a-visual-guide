@@ -8,5 +8,5 @@ coverage/
 !.env.example
 .agents
 .impeccable-live.json
-
+.impeccable-live
 skills-lock.json
