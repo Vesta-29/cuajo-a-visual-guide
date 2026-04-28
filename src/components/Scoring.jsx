@@ -268,10 +268,26 @@ const Scoring = () => {
             {/* Set 1: Quarteta of 4s */}
             <div className="flex flex-col items-center gap-3">
               <div className="flex -space-x-8 sm:-space-x-14">
-                <CuajoCard suit="Oros" value="4" className="!w-14 sm:!w-22 shadow-md" />
-                <CuajoCard suit="Bastos" value="4" className="!w-14 sm:!w-22 shadow-md" />
-                <CuajoCard suit="Espadas" value="4" className="!w-14 sm:!w-22 shadow-md" />
-                <CuajoCard suit="Copas" value="4" className="!w-14 sm:!w-22 ring-2 ring-[#E06A7D] shadow-xl z-10" />
+                <CuajoCard
+                  suit="Oros"
+                  value="4"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
+                <CuajoCard
+                  suit="Bastos"
+                  value="4"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
+                <CuajoCard
+                  suit="Espadas"
+                  value="4"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
+                <CuajoCard
+                  suit="Copas"
+                  value="4"
+                  className="!w-14 sm:!w-22 ring-2 ring-[#E06A7D] shadow-xl z-10"
+                />
               </div>
               <p className="text-[9px] font-black tracking-widest text-white uppercase">
                 Quarteta · 4s
@@ -281,9 +297,21 @@ const Scoring = () => {
             {/* Set 2: Trio 3s */}
             <div className="flex flex-col items-center gap-3">
               <div className="flex -space-x-8 sm:-space-x-14">
-                <CuajoCard suit="Oros" value="3" className="!w-14 sm:!w-22 shadow-md" />
-                <CuajoCard suit="Bastos" value="3" className="!w-14 sm:!w-22 shadow-md" />
-                <CuajoCard suit="Copas" value="3" className="!w-14 sm:!w-22 shadow-md" />
+                <CuajoCard
+                  suit="Oros"
+                  value="3"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
+                <CuajoCard
+                  suit="Bastos"
+                  value="3"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
+                <CuajoCard
+                  suit="Copas"
+                  value="3"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
               </div>
               <p className="text-[9px] font-black tracking-widest text-white uppercase">
                 Trio · 3s
@@ -293,9 +321,21 @@ const Scoring = () => {
             {/* Set 3: Trio 5s */}
             <div className="flex flex-col items-center gap-3">
               <div className="flex -space-x-8 sm:-space-x-14">
-                <CuajoCard suit="Oros" value="5" className="!w-14 sm:!w-22 shadow-md" />
-                <CuajoCard suit="Bastos" value="5" className="!w-14 sm:!w-22 shadow-md" />
-                <CuajoCard suit="Copas" value="5" className="!w-14 sm:!w-22 shadow-md" />
+                <CuajoCard
+                  suit="Oros"
+                  value="5"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
+                <CuajoCard
+                  suit="Bastos"
+                  value="5"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
+                <CuajoCard
+                  suit="Copas"
+                  value="5"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
               </div>
               <p className="text-[9px] font-black tracking-widest text-white uppercase">
                 Trio · 5s
@@ -305,9 +345,21 @@ const Scoring = () => {
             {/* Set 4: Escalera Espadas */}
             <div className="flex flex-col items-center gap-3">
               <div className="flex -space-x-8 sm:-space-x-14">
-                <CuajoCard suit="Espadas" value="3" className="!w-14 sm:!w-22 shadow-md" />
-                <CuajoCard suit="Espadas" value="4" className="!w-14 sm:!w-22 shadow-md" />
-                <CuajoCard suit="Espadas" value="5" className="!w-14 sm:!w-22 shadow-md" />
+                <CuajoCard
+                  suit="Espadas"
+                  value="3"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
+                <CuajoCard
+                  suit="Espadas"
+                  value="4"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
+                <CuajoCard
+                  suit="Espadas"
+                  value="5"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
               </div>
               <p className="text-[9px] font-black tracking-widest text-white uppercase">
                 Escalera · Espadas
@@ -317,9 +369,21 @@ const Scoring = () => {
             {/* Set 5: Trio Kings */}
             <div className="flex flex-col items-center gap-3">
               <div className="flex -space-x-8 sm:-space-x-14">
-                <CuajoCard suit="Oros" value="King" className="!w-14 sm:!w-22 shadow-md" />
-                <CuajoCard suit="Copas" value="King" className="!w-14 sm:!w-22 shadow-md" />
-                <CuajoCard suit="Bastos" value="King" className="!w-14 sm:!w-22 shadow-md" />
+                <CuajoCard
+                  suit="Oros"
+                  value="King"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
+                <CuajoCard
+                  suit="Copas"
+                  value="King"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
+                <CuajoCard
+                  suit="Bastos"
+                  value="King"
+                  className="!w-14 sm:!w-22 shadow-md"
+                />
               </div>
               <p className="text-[9px] font-black tracking-widest text-white uppercase">
                 Trio · Kings
@@ -498,7 +562,7 @@ const Scoring = () => {
               <div className="bg-white/5 border border-white/10 rounded-lg p-3 mb-8 inline-flex items-center gap-3">
                 <p className="text-xs text-stone-300">
                   <strong className="text-white">Interactive Tip:</strong> Hover
-                  over the numbered steps below to see how the bonus cards
+                  / Tap over the numbered steps below to see how the bonus cards
                   connect!
                 </p>
               </div>
@@ -617,52 +681,147 @@ const Scoring = () => {
               {/* Set 1: Quarteta of 4s */}
               <div className="flex flex-col items-center gap-3">
                 <div className="flex -space-x-8 sm:-space-x-14">
-                  <CuajoCard suit="Oros" value="4" className="!w-14 sm:!w-22 shadow-md" style={getCardStyle([], null)} />
-                  <CuajoCard suit="Bastos" value="4" className="!w-14 sm:!w-22 shadow-md" style={getCardStyle([], null)} />
-                  <CuajoCard suit="Espadas" value="4" className="!w-14 sm:!w-22 shadow-md" style={getCardStyle([], null)} />
-                  <CuajoCard suit="Copas" value="4" className="!w-14 sm:!w-22 ring-2 ring-[#E06A7D] shadow-xl" style={getCardStyle([], null)} />
+                  <CuajoCard
+                    suit="Oros"
+                    value="4"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    style={getCardStyle([], null)}
+                  />
+                  <CuajoCard
+                    suit="Bastos"
+                    value="4"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    style={getCardStyle([], null)}
+                  />
+                  <CuajoCard
+                    suit="Espadas"
+                    value="4"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    style={getCardStyle([], null)}
+                  />
+                  <CuajoCard
+                    suit="Copas"
+                    value="4"
+                    className="!w-14 sm:!w-22 ring-2 ring-[#E06A7D] shadow-xl"
+                    style={getCardStyle([], null)}
+                  />
                 </div>
-                <p className="text-[9px] font-black tracking-widest text-white uppercase">Quarteta · 4s</p>
+                <p className="text-[9px] font-black tracking-widest text-white uppercase">
+                  Quarteta · 4s
+                </p>
               </div>
 
               {/* Set 2: Trio 3s */}
               <div className="flex flex-col items-center gap-3">
                 <div className="flex -space-x-8 sm:-space-x-14">
-                  <CuajoCard suit="Oros" value="3" className="!w-14 sm:!w-22 shadow-md" style={getCardStyle([], null)} />
-                  <CuajoCard suit="Bastos" value="3" className="!w-14 sm:!w-22 shadow-md" style={getCardStyle([], null)} />
-                  <CuajoCard suit="Copas" value="3" className="!w-14 sm:!w-22 ring-1 ring-[#E06A7D]/40 shadow-lg" id="hand-copas-3" style={getCardStyle(["bunot-bonus"], 1)} />
+                  <CuajoCard
+                    suit="Oros"
+                    value="3"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    style={getCardStyle([], null)}
+                  />
+                  <CuajoCard
+                    suit="Bastos"
+                    value="3"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    style={getCardStyle([], null)}
+                  />
+                  <CuajoCard
+                    suit="Copas"
+                    value="3"
+                    className="!w-14 sm:!w-22 ring-1 ring-[#E06A7D]/40 shadow-lg"
+                    id="hand-copas-3"
+                    style={getCardStyle(["bunot-bonus"], 1)}
+                  />
                 </div>
-                <p className="text-[9px] font-black tracking-widest text-white uppercase">Trio · 3s</p>
+                <p className="text-[9px] font-black tracking-widest text-white uppercase">
+                  Trio · 3s
+                </p>
               </div>
 
               {/* Set 3: Trio 5s */}
               <div className="flex flex-col items-center gap-3">
                 <div className="flex -space-x-8 sm:-space-x-14">
-                  <CuajoCard suit="Oros" value="5" className="!w-14 sm:!w-22 shadow-md" style={getCardStyle([], null)} />
-                  <CuajoCard suit="Bastos" value="5" className="!w-14 sm:!w-22 shadow-md" style={getCardStyle([], null)} />
-                  <CuajoCard suit="Copas" value="5" className="!w-14 sm:!w-22 ring-1 ring-[#E06A7D]/40 shadow-lg" id="hand-copas-5" style={getCardStyle(["bunot-bonus"], 1)} />
+                  <CuajoCard
+                    suit="Oros"
+                    value="5"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    style={getCardStyle([], null)}
+                  />
+                  <CuajoCard
+                    suit="Bastos"
+                    value="5"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    style={getCardStyle([], null)}
+                  />
+                  <CuajoCard
+                    suit="Copas"
+                    value="5"
+                    className="!w-14 sm:!w-22 ring-1 ring-[#E06A7D]/40 shadow-lg"
+                    id="hand-copas-5"
+                    style={getCardStyle(["bunot-bonus"], 1)}
+                  />
                 </div>
-                <p className="text-[9px] font-black tracking-widest text-white uppercase">Trio · 5s</p>
+                <p className="text-[9px] font-black tracking-widest text-white uppercase">
+                  Trio · 5s
+                </p>
               </div>
 
               {/* Set 4: Escalera Espadas */}
               <div className="flex flex-col items-center gap-3">
                 <div className="flex -space-x-8 sm:-space-x-14">
-                  <CuajoCard suit="Espadas" value="3" className="!w-14 sm:!w-22 shadow-md" id="hand-espadas-3" style={getCardStyle(["sowee-bonus"], 2)} />
-                  <CuajoCard suit="Espadas" value="4" className="!w-14 sm:!w-22 shadow-md" id="hand-espadas-4" style={getCardStyle(["sowee-bonus"], 2)} />
-                  <CuajoCard suit="Espadas" value="5" className="!w-14 sm:!w-22 ring-1 ring-white/40 shadow-lg" id="hand-espadas-5" style={getCardStyle([], null)} />
+                  <CuajoCard
+                    suit="Espadas"
+                    value="3"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    id="hand-espadas-3"
+                    style={getCardStyle(["sowee-bonus"], 2)}
+                  />
+                  <CuajoCard
+                    suit="Espadas"
+                    value="4"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    id="hand-espadas-4"
+                    style={getCardStyle(["sowee-bonus"], 2)}
+                  />
+                  <CuajoCard
+                    suit="Espadas"
+                    value="5"
+                    className="!w-14 sm:!w-22 ring-1 ring-white/40 shadow-lg"
+                    id="hand-espadas-5"
+                    style={getCardStyle([], null)}
+                  />
                 </div>
-                <p className="text-[9px] font-black tracking-widest text-white uppercase">Escalera · Espadas</p>
+                <p className="text-[9px] font-black tracking-widest text-white uppercase">
+                  Escalera · Espadas
+                </p>
               </div>
 
               {/* Set 5: Trio Kings */}
               <div className="flex flex-col items-center gap-3">
                 <div className="flex -space-x-8 sm:-space-x-14">
-                  <CuajoCard suit="Oros" value="King" className="!w-14 sm:!w-22 shadow-md" style={getCardStyle([], null)} />
-                  <CuajoCard suit="Copas" value="King" className="!w-14 sm:!w-22 shadow-md" style={getCardStyle([], null)} />
-                  <CuajoCard suit="Bastos" value="King" className="!w-14 sm:!w-22 shadow-md" style={getCardStyle([], null)} />
+                  <CuajoCard
+                    suit="Oros"
+                    value="King"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    style={getCardStyle([], null)}
+                  />
+                  <CuajoCard
+                    suit="Copas"
+                    value="King"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    style={getCardStyle([], null)}
+                  />
+                  <CuajoCard
+                    suit="Bastos"
+                    value="King"
+                    className="!w-14 sm:!w-22 shadow-md"
+                    style={getCardStyle([], null)}
+                  />
                 </div>
-                <p className="text-[9px] font-black tracking-widest text-white uppercase">Trio · Kings</p>
+                <p className="text-[9px] font-black tracking-widest text-white uppercase">
+                  Trio · Kings
+                </p>
               </div>
             </div>
           </div>
@@ -738,9 +897,9 @@ const Scoring = () => {
             <h4 className="text-4xl font-serif italic mb-4 text-[#E06A7D]">
               Porbis
             </h4>
-            <p className="text-stone-600 text-sm leading-relaxed mb-8">
+            <p className="text-sm leading-relaxed mb-8" style={{ color: "#57534e" }}>
               Awarded if you win with{" "}
-              <strong className="text-stone-800">no Kings</strong> at all, or
+              <strong style={{ color: "#292524" }}>no Kings</strong> at all, or
               exactly one Hari used strictly in a special straight. This is
               incredibly rare because Kings cannot be discarded!
             </p>

@@ -9,7 +9,7 @@ const FlipCard = ({ suit, value = "King", isFlipped }) => {
   return (
     <div
       style={{ perspective: "600px" }}
-      className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+      className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
     >
       <div
         style={{
@@ -102,17 +102,17 @@ const Objective = () => {
             <CuajoCard
               suit="Oros"
               value="3"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
             <CuajoCard
               suit="Copas"
               value="3"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
             <CuajoCard
               suit="Espadas"
               value="3"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
           </div>
         </div>
@@ -133,22 +133,22 @@ const Objective = () => {
             <CuajoCard
               suit="Oros"
               value="5"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
             <CuajoCard
               suit="Copas"
               value="5"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
             <CuajoCard
               suit="Espadas"
               value="5"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
             <CuajoCard
               suit="Bastos"
               value="5"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
           </div>
         </div>
@@ -170,17 +170,17 @@ const Objective = () => {
             <CuajoCard
               suit="Bastos"
               value="3"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
             <CuajoCard
               suit="Bastos"
               value="4"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
             <CuajoCard
               suit="Bastos"
               value="5"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
           </div>
         </div>
@@ -192,17 +192,22 @@ const Objective = () => {
               The Secret(Secreto)
             </h4>
             <p className="text-stone-500 text-sm mb-4">
-              A <strong>Secret</strong> is a set of four identical cards. When
-              you have one, you can place it face down on your turn before
-              discarding. Other players won’t know what cards are in it. After
-              you place a secret, each opponent must pay a fee. The cards in a
-              secret stay locked—they can’t be discarded or used in other sets.
+              A <strong>Secret</strong> is when you collect{" "}
+              <strong>four identical cards </strong>
+              and place them face down on your turn before discarding; other
+              players won’t know what cards are in it, each opponent must pay a
+              fee when you place it, and the cards stay locked so you can’t use
+              or discard them later
+            </p>
+            <p className="text-[10px] font-black uppercase tracking-widest text-stone-400 mt-1 text-center w-full md:text-left">
+              Tip: Hover or tap to reveal the secret
             </p>
           </div>
           <div
             className={`${visualContainerClass} cursor-pointer p-4 rounded-xl transition-colors hover:bg-stone-200/50`}
             onMouseEnter={() => setSecretsFlipped(true)}
             onMouseLeave={() => setSecretsFlipped(false)}
+            onClick={() => setSecretsFlipped((f) => !f)}
           >
             {[1, 2, 3, 4].map((i) => (
               <FlipCard
@@ -222,24 +227,25 @@ const Objective = () => {
               Lone Kings(Hari)
             </h4>
             <p className="text-stone-500 text-sm leading-relaxed">
-              "A <strong>King</strong> by itself is a valid combination. You can
-              hold any number of kings in your final hand."
+              A <strong>King</strong> by itself is a{" "}
+              <strong>valid combination</strong>. You can hold any number of
+              kings in your final hand.
             </p>
             <span className="text-sm block mt-2 italic text-stone-400">
-              "Note: Kings can alternatively be used as part of a set, sequence
-              or secret",
+              Note: Kings can alternatively be used as part of a set, sequence
+              or secret.
             </span>
           </div>
           <div className={visualContainerClass}>
             <CuajoCard
               suit="Oros"
               value="King"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
             <CuajoCard
               suit="Copas"
               value="King"
-              className="!w-16 sm:!w-20 md:!w-24 lg:!w-28"
+              className="!w-20 sm:!w-20 md:!w-24 lg:!w-28"
             />
           </div>
         </div>
