@@ -98,7 +98,7 @@ export default function App() {
   return (
     <div
       data-theme={theme}
-      className={`min-h-screen w-full flex overflow-x-hidden ${theme === "Night" ? "bg-slate-950 text-slate-200" : "bg-[#FDFCF9] text-stone-900"} transition-colors duration-500`}
+      className={`min-h-screen w-full flex overflow-x-clip ${theme === "Night" ? "bg-slate-950 text-slate-200" : "bg-[#FDFCF9] text-stone-900"} transition-colors duration-500`}
       style={{
         backgroundImage: `url(${creamPaperImg})`,
         backgroundRepeat: "repeat",
@@ -118,7 +118,7 @@ export default function App() {
       <main className="flex-1 lg:pl-64 transition-colors duration-500">
         {/* Mobile Nav Header */}
         <header
-          className={`lg:hidden sticky top-0 z-40 backdrop-blur-md border-b p-3 flex justify-between items-center relative ${theme === "Night" ? "bg-slate-900/80 border-slate-800" : "bg-stone-100/80 border-stone-300"}`}
+          className={`lg:hidden sticky top-0 z-50 backdrop-blur-md border-b p-3 flex justify-between items-center ${theme === "Night" ? "bg-slate-900/80 border-slate-800" : "bg-stone-100/80 border-stone-300"}`}
         >
           <div className="flex items-center gap-3">
             <div className="w-7 h-10 rounded-md bg-stone-900 border-[1.5px] border-[#c0392b] p-0.5 flex items-center justify-center overflow-hidden shrink-0">
