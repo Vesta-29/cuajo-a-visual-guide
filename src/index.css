@@ -18,14 +18,54 @@
   --color-cuajo-bg: #F1EDE0;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--color-cuajo-bg);
   background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
   color: #2c2c2c;
   font-family: var(--font-sans);
-  font-size: 16px; /* Reverted to standard for a more compact feel */
+  font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cuajo-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db; /* stone-300 */
+  border-radius: 5px;
+  border: 2px solid var(--color-cuajo-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af; /* stone-400 */
+}
+
+[data-theme="Night"] ::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+[data-theme="Night"] ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-color: #020617;
+}
+
+[data-theme="Night"] ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
 }
 
 h1 {
@@ -60,9 +100,21 @@ h1, h2, h3, h4 {
    ========================================= */
 
 /* --- Night Theme --- */
+[data-theme="Night"],
+[data-theme="Night"] body {
+  background-color: #020617 !important; /* slate-950 */
+  color: #e2e8f0 !important;
+}
+
 [data-theme="Night"] .bg-white,
+[data-theme="Night"] .bg-white\/30,
 [data-theme="Night"] .bg-white\/40,
 [data-theme="Night"] .bg-white\/60,
+[data-theme="Night"] .bg-white\/80,
+[data-theme="Night"] .bg-white\/90,
+[data-theme="Night"] .bg-stone-50,
+[data-theme="Night"] .bg-stone-100,
+[data-theme="Night"] .bg-stone-100\/80,
 [data-theme="Night"] .bg-\[\#FDFCF9\] {
   background-color: #0f172a !important;
   border-color: #1e293b !important;
@@ -79,7 +131,9 @@ h1, h2, h3, h4 {
   background-color: rgba(30, 41, 59, 0.8) !important;
 }
 
-[data-theme="Night"] .hover\:bg-white\/50:hover {
+[data-theme="Night"] .hover\:bg-white\/50:hover,
+[data-theme="Night"] .hover\:bg-stone-100:hover,
+[data-theme="Night"] .hover\:bg-stone-200\/50:hover {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -119,10 +173,6 @@ h1, h2, h3, h4 {
   border-color: #334155 !important;
 }
 
-[data-theme="Night"] .hover\:bg-stone-100:hover {
-  background-color: #1e293b !important;
-}
-
 [data-theme="Night"] .shadow-sm,
 [data-theme="Night"] .shadow-md,
 [data-theme="Night"] .shadow-xl {
@@ -132,4 +182,9 @@ h1, h2, h3, h4 {
 /* --- Faded Theme --- */
 [data-theme="Faded"] main {
   filter: sepia(0.3) saturate(0.8) contrast(0.95) brightness(0.95);
+}
+
+[data-theme="Faded"],
+[data-theme="Faded"] body {
+  background-color: #f4f1e8 !important;
 }

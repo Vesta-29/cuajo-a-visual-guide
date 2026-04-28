@@ -31,6 +31,11 @@ export default function App() {
     setTheme(themes[(currentIndex + 1) % themes.length]);
   };
 
+  // Sync theme to document for global CSS rules
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
   // Smooth scroll to sections
   const scrollTo = (id) => {
     setActiveSection(id);
@@ -93,7 +98,7 @@ export default function App() {
   return (
     <div
       data-theme={theme}
-      className={`min-h-screen flex ${theme === "Night" ? "bg-slate-950 text-slate-200" : "bg-[#FDFCF9] text-stone-900"} transition-colors duration-500`}
+      className={`min-h-screen w-full flex overflow-x-hidden ${theme === "Night" ? "bg-slate-950 text-slate-200" : "bg-[#FDFCF9] text-stone-900"} transition-colors duration-500`}
       style={{
         backgroundImage: `url(${creamPaperImg})`,
         backgroundRepeat: "repeat",
@@ -232,7 +237,7 @@ export default function App() {
 
       {/* Global Overlay Decorations */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-[0.03]">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[100vh] font-serif font-black opacity-10 leading-none select-none">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[40vh] sm:text-[60vh] md:text-[80vh] lg:text-[100vh] font-serif font-black opacity-10 leading-none select-none text-center">
           CUAJO
         </div>
       </div>

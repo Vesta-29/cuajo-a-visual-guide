@@ -814,7 +814,7 @@ const Scoring = () => {
       {/* Special Cards Row */}
       <div className="grid md:grid-cols-2 gap-6">
         <div className="p-8 sm:p-10 bg-white/60 border border-stone-300 rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-center">
-          <div className="absolute -top-12 -right-8 opacity-10 pointer-events-none">
+          <div className="absolute -top-12 right-0 opacity-10 pointer-events-none">
             <CuajoCard
               suit="Oros"
               value="King"
@@ -867,8 +867,8 @@ const Scoring = () => {
 
         <div className="p-8 sm:p-10 bg-gradient-to-br from-white via-white to-amber-50 border border-amber-200 rounded-xl shadow-xl relative overflow-hidden flex flex-col justify-center group transition-all duration-500 hover:shadow-2xl hover:border-amber-300">
           {/* Decorative background glow */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-300/20 rounded-full blur-3xl group-hover:bg-amber-300/30 transition-all duration-700 pointer-events-none -translate-y-1/2 translate-x-1/3" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#E06A7D]/10 rounded-full blur-3xl pointer-events-none translate-y-1/3 -translate-x-1/3" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-300/20 rounded-full blur-3xl group-hover:bg-amber-300/30 transition-all duration-700 pointer-events-none -translate-y-1/2 translate-x-1/4" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#E06A7D]/10 rounded-full blur-3xl pointer-events-none translate-y-1/3 -translate-x-1/4" />
 
           <div className="relative z-10">
             <p className="text-[10px] font-black tracking-[0.2em] uppercase mb-3 text-[#E06A7D]">

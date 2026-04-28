@@ -92,17 +92,18 @@ const Hero = () => {
   return (
     <section className="mb-16">
       <div className="flex flex-col md:flex-row justify-between items-center gap-1 w-full">
-        <div className="flex-[0.8] max-w-2xl">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-stone-800 mb-8 tracking-tighter">
+        <div className="flex-[0.8] max-w-2xl w-full">
+          <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-stone-800 mb-8 tracking-tighter break-words whitespace-normal">
             Learn{" "}
             <span className="italic" style={{ color: "#E06A7D" }}>
               Cuajo{" "}
             </span>{" "}
-            <br />A Digital <span style={{ color: "#E06A7D" }}>Manual</span>
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>A Digital <span style={{ color: "#E06A7D" }}>Manual</span>
           </h1>
-          <div className="flex flex-wrap gap-10 mt-16 pb-8">
+          <div className="flex flex-wrap gap-6 sm:gap-10 mt-8 sm:mt-16 pb-8">
             <div>
-              <span className="block text-4xl font-serif font-bold italic text-stone-800">
+              <span className="block text-3xl sm:text-4xl font-serif font-bold italic text-stone-800">
                 112
               </span>
               <span className="text-[9px] font-black uppercase tracking-widest text-stone-400">
@@ -110,7 +111,7 @@ const Hero = () => {
               </span>
             </div>
             <div>
-              <span className="block text-4xl font-serif font-bold italic text-stone-800">
+              <span className="block text-3xl sm:text-4xl font-serif font-bold italic text-stone-800">
                 16
               </span>
               <span className="text-[9px] font-black uppercase tracking-widest text-stone-400">
@@ -118,7 +119,7 @@ const Hero = () => {
               </span>
             </div>
             <div>
-              <span className="block text-4xl font-serif font-bold italic text-stone-800">
+              <span className="block text-3xl sm:text-4xl font-serif font-bold italic text-stone-800">
                 4
               </span>
               <span className="text-[9px] font-black uppercase tracking-widest text-stone-400">
